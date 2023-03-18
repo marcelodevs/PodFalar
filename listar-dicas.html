@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/listar-dicas.css">
+    <title>Listar Dicas</title>
+</head>
+<body>
+    <header>
+        <nav id="menu">
+            <div>
+                <span class="logo"
+                    translate="no">
+                    <img src="assets/img/podfalar-logo.png"
+                        class="podfalar-logo">
+                    <span class="logo-txt-lateral">PodFalar</span>
+                </span>
+            </div>
+            <ul class="lista">
+                <a href="index.html"
+                    class="link">Home</a>
+                <a href="depoimentos.html"
+                    class="link">Depoimentos</a>
+                <a href="registar.html"
+                    class="link">Registrar</a>
+                <a href="auto-ajuda.html"
+                    class="link">Auto-ajuda</a>
+                <a href="listar-dicas.html"
+                    class="link">Listar Dicas</a>
+            </ul>
+            <span>
+                <details>
+                    <summary>
+                        <img src="assets/img/user.png"
+                            alt="user"
+                            class="user">
+                    </summary>
+                    <section class="details">
+                        <h3>
+                            <?php
+                                // include_once('php/buscar-nome.php');
+                                ?>
+                            <abbr title="Editar perfil"
+                                class="abreviation">
+                                <a href="assets/html/mudar-registros.html"
+                                    target="_blank"
+                                    class="link-user">✎</a>
+                            </abbr>
+                            <abbr title="Sair"
+                                class="abreviation">
+                                <a href="assets/php/logout.php"
+                                    class="link-user out">Sair</a>
+                            </abbr>
+                        </h3>
+                        <hr>
+                        <span>
+                            Email:
+                            <?php
+                                include_once("php/buscar-email.php");
+                                ?>
+                        </span>
+                        <br>
+                        <span>
+                            Gênero:
+                            <?php
+                                include_once("php/buscar-genero.php");
+                                ?>
+                        </span>
+                        <br>
+                        <span>
+                            Idade:
+                            <?php
+                                include_once("php/buscar-idade.php");
+                                ?>
+                        </span>
+                    </section>
+                </details>
+            </span>
+        </nav>
+    </header>
+</body>
+</html>

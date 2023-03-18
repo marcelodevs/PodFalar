@@ -10,14 +10,13 @@ $conexao = new mysqli($server, $user, $password, $bd);
 if ($conexao) {
     echo "
         <script>
-            alert('Bem vindo!') 
+            alert('Conexão: Bem vindo!') 
         </script>
         ";
 } else {
     echo "
     <script>
-        alert('ERROR')
+        alert('Conexão: ERROR')
     </script>
     ";
 }
-?>

@@ -70,8 +70,11 @@ body {
 #menu {
     display: flex;
     justify-content: space-evenly;
-    border-radius: 0 0 20em 0;
+    width: 100%;
     height: 5em;
+    background-color: beige;
+    position: fixed;
+    z-index: 1000;
 }
 
 .lista {
@@ -190,17 +193,18 @@ body {
     height: 77vh;
     font-family: KanitItalic;
     user-select: none;
+    box-shadow: 6px 6px 0 -1px #263fad
 }
 
 .podfalar-txt-main::before {
     content: '';
     position: absolute;
-    right: 5%;
-    top: 80%;
+    right: 6%;
+    top: 73%;
     border-style: solid;
     border-width: 120px 30px 0 30px;
     border-color: #989cc7 transparent transparent transparent;
-    transform: rotate(-45deg);
+    transform: rotate(-40deg);
 }
 
 /* VOLTAR PARA CIMA */
@@ -219,14 +223,13 @@ body {
     cursor: pointer;
 }
 
-/* TABELA/BLÃO DE LEGENDA */
+/* BALÃO DE LEGENDA */
 
-.txt-ballon {
+.txt-chat {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 80px;
     font-size: 1.5em;
     position: relative;
     left: 30%;
@@ -237,6 +240,15 @@ body {
     flex-direction: row;
     position: relative;
     right: 30%;
+}
+
+.arrow-down {
+    position: absolute;
+    right: -70%;
+    top: 40%;
+    width: 8em;
+    height: 4em;
+    transform: rotate(90deg);
 }
 
 .btn-chat {
@@ -255,7 +267,7 @@ body {
     transform: scale(1.1);
 }
 
-.btn-chat > a {
+.btn-chat>a {
     color: #fff;
     font-size: 20px;
 }
@@ -263,71 +275,92 @@ body {
 /* TABELA */
 
 .tabela {
-    border: 1px solid #000;
     height: 20em;
     width: 40em;
 }
 
 .table-depoi {
-    border: 1px solid #000;
+    position: absolute;
+    top: -8%;
+    right: 23.7%;
+    border: 2px solid #000;
     width: 40em;
+}
+
+.leve {
+    background-color: #05d405;
+    border: #000 solid 2px;
+}
+
+.interm {
+    background-color: yellow;
+    border: #000 solid 2px;
+}
+
+.pesado {
+    background-color: red;
+    border: #000 solid 2px;
 }
 
 /* CARROSEL */
 
 .carousel {
+    width: 100vw;
+    height: 400px;
+    overflow: hidden;
     position: relative;
-    height: 300px;
-    width: 100%;
     user-select: none;
 }
 
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+.carousel ul {
+    width: 300vw;
     height: 100%;
-    transition: opacity 0.5s ease-in-out;
-}
-
-/* .slide.active {
-    opacity: 1;
-} */
-
-.slide-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 50vw;
-}
-
-.slide-content h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.slide-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.btns {
-    text-align: center;
     display: flex;
-    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    transition: all 0.6s ease-in-out;
 }
 
-.next,
-.prev {
-    cursor: pointer;
-    background-color: #2e14ed;
+.carousel li:not() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 100%;
+    text-align: center;
     padding: 20px;
-    border-radius: 50%;
-    width: 1em;
-    height: 1em;
+    box-sizing: border-box;
+    transition: background-color 0.6s ease-in-out;
+}
+
+.carousel h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.carousel p {
+    font-size: 24px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+}
+
+.carousel.theme-light {
+    background-color: #05d405;
+}
+
+.carousel.theme-interm {
+    background-color: yellow;
+}
+
+.carousel li.theme-light {
+    background-color: #05d405;
+}
+
+.carousel li.theme-interm {
+    background-color: yellow;
 }
 
 /* PATROCÍNIOS */
