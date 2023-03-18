@@ -1,0 +1,31 @@
+@import url(class/transition.css);
+
+body {
+    background-color: #ffffff;
+}
+
+.fas {
+    width: 2em;
+    height: 2em;
+    z-index: 5;
+}
+
+.col01 {
+    display: grid;
+    grid-template-columns: repeat(2, 18em);
+    gap: 10px;
+}
+
+.col02 {
+    display: grid;
+    grid-template-columns: repeat(2, 18em);
+    gap: 10px;
+}
+
+section {
+    margin-top: -20px;
+}
+
+#form2Example27 {
+    cursor: pointer;
+}

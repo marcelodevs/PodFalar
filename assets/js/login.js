@@ -1,0 +1,1 @@
+import { mudancaDeCor } from "./registro";

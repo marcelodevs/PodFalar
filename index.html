@@ -1,0 +1,289 @@
+<?php
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible"
+            content="IE=edge">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon"
+            href="assets/img/logo.png"
+            type="image/x-icon">
+        <link rel="stylesheet"
+            href="assets/css/index.css">
+        <link rel="stylesheet"
+            href="assets/css/animation/keyframe.css">
+        <title>PodFalar</title>
+    </head>
+
+    <body>
+        <header>
+            <nav id="menu">
+                <div>
+                    <span class="logo"
+                        translate="no">
+                        <img src="assets/img/podfalar-logo.png"
+                            class="podfalar-logo">
+                        <span class="logo-txt-lateral">PodFalar</span>
+                    </span>
+                </div>
+                <ul class="lista">
+                    <a href="#"
+                        class="link">Home</a>
+                    <a href="depoimentos.html"
+                        class="link">Depoimentos</a>
+                    <a href="registar.html"
+                        class="link">Registrar</a>
+                    <a href="auto-ajuda.html"
+                        class="link">Auto-ajuda</a>
+                </ul>
+                <span>
+                    <details>
+                        <summary>
+                            <img src="assets/img/user.png"
+                                alt="user"
+                                class="user">
+                        </summary>
+                        <section class="details">
+                            <h3>
+                                <?php
+                            // include_once('php/buscar-nome.php');
+                            ?>
+                                <abbr title="Editar perfil"
+                                    class="abreviation">
+                                    <a href="assets/html/mudar-registros.html"
+                                        target="_blank"
+                                        class="link-user">✎</a>
+                                </abbr>
+                                <abbr title="Sair"
+                                    class="abreviation">
+                                    <a href="assets/php/logout.php"
+                                        class="link-user out">Sair</a>
+                                </abbr>
+                            </h3>
+                            <hr>
+                            <span>
+                                Email:
+                                <?php
+                            include_once("php/buscar-email.php");
+                            ?>
+                            </span>
+                            <br>
+                            <span>
+                                Gênero:
+                                <?php
+                            include_once("php/buscar-genero.php");
+                            ?>
+                            </span>
+                            <br>
+                            <span>
+                                Idade:
+                                <?php
+                            include_once("php/buscar-idade.php");
+                            ?>
+                            </span>
+                        </section>
+                    </details>
+                </span>
+            </nav>
+        </header>
+
+        <main>
+            <section id="main-text-img">
+                <img src="assets/img/PodFalar-removebg-preview.png"
+                    class="podfalar-logo-main">
+                <p class="podfalar-txt-main">
+                    A educação sexual é um tema importante e relevante para todas as pessoas, independentemente de sua
+                    idade,
+                    gênero ou
+                    orientação sexual. A educação sexual aborda muitas questões diferentes relacionadas à sexualidade,
+                    incluindo saúde
+                    sexual, relações interpessoais, consentimento, gravidez, prevenção de doenças sexualmente
+                    transmissíveis
+                    e muito mais. Embora a educação sexual seja importante, muitas vezes pode ser um assunto delicado e
+                    difícil de abordar. Esse é o propósito do nosso site, ensinar de vez sobre a educação sexual de
+                    forma
+                    delicada e diferente.</p>
+                <!-- <iframe src="https://prezi.com/p/embed/tzc1e0qqs_at/"
+                    id="iframe_container"
+                    frameborder="0"
+                    webkitallowfullscreen=""
+                    mozallowfullscreen=""w
+                    allowfullscreen=""
+                    allow="autoplay; fullscreen"
+                    height="315"
+                    width="560"></iframe> -->
+            </section>
+
+            <span class="txt-logo">‘PodPah, PodFalar,<br> nós vamos te ajudar!’</span>
+
+            <section id="second-infor">
+                <div class="reveal span-ballon-info">
+                    <div class="ballon-legend">
+                        <table class="tabela">
+                            <span class="table-depoi">Depoimentos</span>
+                            <thead class="tbl-head">
+                                <tr class="classificacoes">
+                                    <th>Leve</th>
+                                    <th>Intermediário</th>
+                                    <th>Pesado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Comentários curtos e simples</td>
+                                    <td>Comentários detalhados com exemplos e referências</td>
+                                    <td>Análises profundas e técnicas com estudos de caso e dados estatísticos</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="txt-ballon">
+                        <span>Acesse nosso chatBot para se auto-ajudar</span>
+                        <button class="btn-chat">
+                            <a href="#">
+                                Conversar
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="terciary-infor">
+                <div class="reveal">
+                    <div class="carousel">
+                        <div class="slide">
+                            <div class="slide-content RJ-1">
+                                <h2>Rio de Janeiro</h2>
+                                <p>“A primeira vez foi quando criança, eu tinha no máximo 11 anos, estava em Araruama,
+                                    meus pais andavam atrás de mim pois
+                                    eles diziam que era necessário para que não me perdessem de vista. Pois bem, estava
+                                    tudo normal quando um homem passando
+                                    ao nosso lado colocou a mão por dentro da minha blusa e colocou o pouquinho de peito
+                                    que eu tinha pra fora. Foi uma ação
+                                    rápida e ninguém viu. Me calei e me arrumei rapidamente. Senti vergonha de mim e
+                                    nojo. Até hoje ninguém sabe disso.”
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-content RJ-2">
+                                <h2>Rio de Janeiro</h2>
+                                <p>“Estávamos, minha amiga e eu, curtindo o Carnaval em Cabo Frio, há uns 10 anos.
+                                    Passamos por um grupo de homens que nos
+                                    jogou para dentro da roda e disse que tínhamos que beija-los. Eu disse que não os
+                                    beijaria e ele falou: quem não beijar,
+                                    toma porrada. Minha amiga e eu abaixamos a cabeça e tentamos nos proteger com o
+                                    braços. Levamos tapas e socos.”
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-content SP">
+                                <h2>São Paulo</h2>
+                                <p>“Eu estava ficando com um cara, sem muita vontade. Minha amiga estava ficando com um
+                                    amigo dele, então, acabou
+                                    acontecendo. Estava beijando ele e estávamos conversando e quando vi, ele abriu a
+                                    calça e pôs o pênis para fora. Na
+                                    hora, eu não entendi e acho que de nervoso, ri, pensando numa brincadeira sem graça
+                                    e disse pra ele “guardar isso”. Ele
+                                    riu, malicioso, pegou o pênis com a mão e me disse “vai, só uma chupadinha!” Aquilo
+                                    me embrulhou o estômago e ainda me
+                                    sentindo meio culpada, me afastei dele. Culpada de que, não sei. Ai, gritei a minha
+                                    amiga que a esperaria na parte
+                                    iluminada dá rua. No outro dia, que fomos de novo pra esse lugar é encontramos essa
+                                    turma, esse cara nem se aproximou.
+                                    Tudo isso deve ter acontecido em 2012 ou 2013 e por alguns dias, ficava com medo de
+                                    chegar perto de homens.”
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-content CE-1">
+                                <h2>Ceará</h2>
+                                <p>“Trabalhei em uma empresa bem pequena e era a única menina que almoçava com os
+                                    meninos. Eu escutei algumas coisas que me
+                                    deixaram sem jeito, tipo 'como você se sente sendo a menina mais bonita daqui?’ ou
+                                    ‘casa comigo?’. Até aí, eu até levava
+                                    na brincadeira, mas um dia, um deles fez comentários sobre meus seios, que são
+                                    grandes, o que me deixou extremamente
+                                    desconfortável. Em outra vez, combinamos de fazer cachorro quente no refeitório. Foi
+                                    quando um deles disse: ‘eu trago a
+                                    salsicha e você traz o quê?', e sorriu para mim.”
+                                </p>
+                            </div>
+                        </div>
+                        <div class="btns">
+                            <input type="button"
+                                class="prev"
+                                value="←">
+                            <input type="button"
+                                class="next"
+                                value="→">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main-patrocinics">
+                <div class="reveal">
+                    <h5>Patrorcinadores</h5>
+                    <div class="imgs-rodape">
+                        <a href="https://criancaevida.org.br/"
+                            target="_blank">
+                            <img src="assets/img/crianca-e-vida-logo.jpg"
+                                class="rodape-img-patrocinics">
+                        </a>
+                        <img src="assets/img/eca-logo.jpg"
+                            class="rodape-img-patrocinics">
+                        <a href="https://www.projetouere.org.br/"
+                            target="_blank">
+                            <img src="assets/img/projeto-uere-logo.jpg"
+                                class="rodape-img-patrocinics">
+                        </a>
+                        <a href="https://www.mesintoseguro.com.br/"
+                            target="_blank">
+                            <img src="assets/img/me-sinto-segura-logo.png"
+                                class="rodape-img-patrocinics flex-wrap">
+                        </a>
+                        <a href="https://www.unicef.org/"
+                            target="_blank">
+                            <img src="assets/img/UNICEF_Logo.png"
+                                class="rodape-img-patrocinics flex-wrap">
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="btn-voltar">
+                <button onclick="voltar()"
+                    class="voltar">⬆</button>
+            </section>
+        </main>
+
+        <footer id="footer">
+            <section class="footer-infor reveal">
+                <span>Projeto escolar desenvolvido por:</span>
+                <div class="proj">
+                    <span>Escola</span>
+                    <span>Alunos</span>
+                </div>
+            </section>
+        </footer>
+
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/reveal.js"></script>
+        <script src="assets/js/scroll.js"></script>
+    </body>
+
+</html>

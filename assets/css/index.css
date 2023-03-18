@@ -1,0 +1,370 @@
+/* REGRAS CSS */
+
+@charset "utf-8";
+
+@import "reveal.css";
+
+@font-face {
+    font-family: KanitItalic;
+    src: url(../font/Kanit-SemiBoldItalic.ttf);
+}
+
+@font-face {
+    font-family: KanitBold;
+    src: url(../font/Kanit-Black.ttf);
+}
+
+/* GLOBAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: KanitItalic;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #ffc0cb, #4343a4);
+    background-position: 0% 50%;
+    /* text-decoration-thickness: 98; */
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* LOGO */
+
+.podfalar-logo {
+    width: 4em;
+    height: 4em;
+    filter: drop-shadow(2px 2px 2px #4343a4);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.logo-txt-lateral {
+    position: relative;
+    left: 5%;
+}
+
+.txt-logo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2em;
+    background: linear-gradient(to left, #2e14ed, #ffc0cb);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* MENU DE NAVEGAÇÃO */
+
+#menu {
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 0 0 20em 0;
+    height: 5em;
+}
+
+.lista {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: all .6s linear;
+}
+
+.lista:hover> :not(:hover) {
+    opacity: .4;
+}
+
+.link {
+    color: #000;
+    transition: all .3s ease-in-out;
+    filter: drop-shadow(2px 2px 2px gray);
+    position: relative;
+    left: 100px;
+    font-size: 1.2em;
+}
+
+.link:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+/* USUÁRIO */
+
+.user {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    position: absolute;
+    top: 1.2%;
+}
+
+.user:active {
+    animation: user .2s ease-in-out;
+}
+
+.details {
+    background-color: dodgerblue;
+    position: absolute;
+    right: 13%;
+    top: 3%;
+    z-index: 200;
+    border-radius: 20px 0 20px 20px;
+    padding: 15px;
+    transition: all .6s ease-in-out;
+}
+
+.details::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 100%;
+    border-style: solid;
+    border-width: 20px 10px 0 10px;
+    border-color: dodgerblue transparent transparent transparent;
+    transform: rotate(-90deg);
+}
+
+.details>h3,
+.details>span {
+    font-family: KanitBold;
+}
+
+.details>h3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.link-user {
+    cursor: pointer;
+    color: black;
+}
+
+.out {
+    background-color: red;
+    padding: 2px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+#main-text-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 63px;
+}
+
+.podfalar-logo-main {
+    display: flex;
+    margin-left: -15%;
+    height: 80vh;
+    width: 80vw;
+    animation: pula 5s linear alternate infinite;
+}
+
+.podfalar-txt-main {
+    border: 5px solid #989cc7;
+    background-color: #989cc7;
+    border-radius: 50%;
+    font-size: 1.3em;
+    padding: 3.9em;
+    text-align: center;
+    color: black;
+    width: 80vw;
+    height: 77vh;
+    font-family: KanitItalic;
+    user-select: none;
+}
+
+.podfalar-txt-main::before {
+    content: '';
+    position: absolute;
+    right: 5%;
+    top: 80%;
+    border-style: solid;
+    border-width: 120px 30px 0 30px;
+    border-color: #989cc7 transparent transparent transparent;
+    transform: rotate(-45deg);
+}
+
+/* VOLTAR PARA CIMA */
+
+.voltar {
+    border-radius: 20px;
+    border: none;
+    background-color: #2e14ed;
+    width: 2em;
+    height: 2em;
+    z-index: 20;
+    position: fixed;
+    font-size: 1.5em;
+    bottom: 10%;
+    left: 90%;
+    cursor: pointer;
+}
+
+/* TABELA/BLÃO DE LEGENDA */
+
+.txt-ballon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    font-size: 1.5em;
+    position: relative;
+    left: 30%;
+}
+
+.span-ballon-info {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 30%;
+}
+
+.btn-chat {
+    width: 15em;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    background-color: #2e14ed;
+    padding: 20px;
+    opacity: .8;
+    transition: all .6s linear;
+}
+
+.btn-chat:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.btn-chat > a {
+    color: #fff;
+    font-size: 20px;
+}
+
+/* TABELA */
+
+.tabela {
+    border: 1px solid #000;
+    height: 20em;
+    width: 40em;
+}
+
+.table-depoi {
+    border: 1px solid #000;
+    width: 40em;
+}
+
+/* CARROSEL */
+
+.carousel {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    user-select: none;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* .slide.active {
+    opacity: 1;
+} */
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 50vw;
+}
+
+.slide-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.slide-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btns {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.next,
+.prev {
+    cursor: pointer;
+    background-color: #2e14ed;
+    padding: 20px;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+}
+
+/* PATROCÍNIOS */
+
+.main-patrocinics {
+    background-color: #fff;
+    color: #000;
+    height: 40em;
+}
+
+.reveal>h5 {
+    text-align: center;
+    font-family: KanitBold;
+    font-size: 1.5em;
+    padding: 30px;
+}
+
+.imgs-rodape {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.rodape-img-patrocinics {
+    width: 20em;
+    height: 15em;
+}
+
+.flex-wrap {
+    width: 30em;
+    margin-top: 40px;
+}
+
+/* RODAPÉ */
+
+#footer {
+    background-color: #000;
+    height: 50vh;
+}
