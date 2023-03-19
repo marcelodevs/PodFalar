@@ -16,53 +16,57 @@ function typeWrite(elemento) {
 const texto = document.querySelector('.podfalar-txt-main');
 typeWrite(texto); //Chama a função
 
-/* CAROUSEL */
+/* SCROLL DE VOLTAR PARA CIMA */
 
-const btnTheme = document.querySelector('#btn-theme');
-const carousel = document.querySelector('.carousel');
+function voltar() {
+    window.scroll({
+        top: 0, // Volta para o topo
+        behavior: 'smooth' // Deixa a "subida" mais suave
+    });
+}
 
-btnTheme.addEventListener('click', function () {
-    if (carousel.classList.contains('theme-light'))
-    {
-        carousel.classList.remove('theme-light');
-        carousel.classList.add('theme-interm');
-    } else
-    {
-        carousel.classList.remove('theme-interm');
-        carousel.classList.add('theme-light');
-    }
+/* REVELAR AO ROLAR PARA BAIXO */
 
-    carousel.querySelectorAll('li').forEach(function (slide) {
-        if (slide.classList.contains('theme-light'))
+function reveal() {
+    // Pega todas as tags que tenha a classe "reveal"
+    var reveals = document.querySelectorAll(".reveal");
+
+    reveals.forEach((reveal) => {
+
+        // Pega a altura em que o usuário está
+        var windowleight = window.innerHeight;
+        // Pega a "localização" do usuário na página
+        var elementTop = reveal.getBoundingClientRect().top;
+        var elementVisible = 100;
+
+        // Verifica se o usuário está descendo a página
+        if (elementTop < windowleight - elementVisible)
         {
-            slide.classList.remove('theme-light');
-            slide.classList.add('theme-interm');
-        } else
+            // Adiciona a classe "active"
+            reveal.classList.add("active");
+        }
+        else
         {
-            slide.classList.remove('theme-interm');
-            slide.classList.add('theme-light');
+            // Remove a classe "active"
+            reveal.classList.remove("active");
         }
     });
-});
+}
 
-const btnPrev = document.querySelector('.carousel-prev');
-const btnNext = document.querySelector('.carousel-next');
-const carouselList = document.querySelector('.carousel ul');
-const carouselItems = document.querySelectorAll('.carousel li');
-let currentPosition = 0;
+// Adiciona o evento "scroll" e chama a função "reveal"
+window.addEventListener("scroll", reveal);
 
-btnPrev.addEventListener('click', function () {
-    if (currentPosition > 0)
+/* MENU */
+
+var menu = document.getElementById('menu');
+var threshold = 50;
+
+window.addEventListener('scroll', function () {
+    if (window.pageYOffset > threshold)
     {
-        currentPosition --;
-        carouselList.style.transform = `translateX(-${currentPosition * 33.5}%)`;
-    }
-});
-
-btnNext.addEventListener('click', function () {
-    if (currentPosition < carouselItems.length - 1)
+        menu.classList.add('scrolled');
+    } else
     {
-        currentPosition ++;
-        carouselList.style.transform = `translateX(-${currentPosition * 33.5}%)`;
+        menu.classList.remove('scrolled');
     }
 });

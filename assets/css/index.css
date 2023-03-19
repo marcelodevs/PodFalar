@@ -25,14 +25,97 @@
     box-sizing: border-box;
 }
 
-body {
-    background: linear-gradient(to right, #ffc0cb, #4343a4);
-    background-position: 0% 50%;
-    /* text-decoration-thickness: 98; */
-}
-
 ::-webkit-scrollbar {
     width: 0px;
+}
+
+/* SLIDE DE FUNDO */
+
+.slider {
+    margin: 0 auto;
+    width: 100%;
+    height: 400px;
+    /* z-index: -1; */
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    height: 400px;
+    width: 400%;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 25%;
+    position: relative;
+}
+
+.slide img {
+    width: 800px;
+}
+
+.manual-navigation {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.manual-btn:hover {
+    background-color: #fff;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -75%;
+}
+
+.navigation-auto div {
+    border: 2px solid #20a6ff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+}
+
+.navigation-auto {
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
 }
 
 /* LOGO */
@@ -74,7 +157,14 @@ body {
     height: 5em;
     background-color: transparent;
     position: fixed;
+    top: 0;
+    right: 0;
     z-index: 1000;
+    transition: background-color .4s ease-out;
+}
+
+#menu.scrolled {
+    background-color: #f5f5dc;
 }
 
 .lista {
@@ -304,64 +394,7 @@ body {
 
 /* CARROSEL */
 
-.carousel {
-    width: 100vw;
-    height: 400px;
-    overflow: hidden;
-    position: relative;
-    user-select: none;
-}
 
-.carousel ul {
-    width: 300vw;
-    height: 100%;
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    transition: all 0.6s ease-in-out;
-}
-
-.carousel li:not() {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50vw;
-    height: 100%;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-    transition: background-color 0.6s ease-in-out;
-}
-
-.carousel h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.carousel p {
-    font-size: 24px;
-    line-height: 1.5;
-    display: flex;
-    align-items: center;
-}
-
-.carousel.theme-light {
-    background-color: #05d405;
-}
-
-.carousel.theme-interm {
-    background-color: yellow;
-}
-
-.carousel li.theme-light {
-    background-color: #05d405;
-}
-
-.carousel li.theme-interm {
-    background-color: yellow;
-}
 
 /* PATROCÍNIOS */
 

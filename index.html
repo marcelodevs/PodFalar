@@ -26,6 +26,60 @@ if (!isset($_SESSION)) {
     </head>
 
     <body>
+
+        <div class="slider">
+
+            <div class="slides">
+                <!-- RADIOS BUTTONS -->
+                <input type="radio"
+                    name="radio-btn"
+                    id="radio1">
+                <input type="radio"
+                    name="radio-btn"
+                    id="radio2">
+                <input type="radio"
+                    name="radio-btn"
+                    id="radio3">
+                <input type="radio"
+                    name="radio-btn"
+                    id="radio4">
+                <!-- FIM RADIOS BUTTONS -->
+
+                <!-- SLIDE IMAGES -->
+                <div class="slide first">
+                    <img src="https://sujeitoprogramador.com/wp-content/uploads/2021/03/thumb-video.png" alt="imagem 1">
+                </div>
+                <div class="slide">
+                    <img src="https://sujeitoprogramador.com/wp-content/uploads/2021/09/thumb.png" alt="imagem 2">
+                </div>
+                <div class="slide">
+                    <img src="https://sujeitoprogramador.com/wp-content/uploads/2021/06/thumpost.png" alt="imagem 3">
+                </div>
+                <div class="slide">
+                    <img src="https://sujeitoprogramador.com/wp-content/uploads/2018/12/qualpc.png" alt="imagem 4">
+                </div>
+                <!-- FIM DE SLIDE IMAGES -->
+
+                <!-- NAVIGATION AUTO -->
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+                <!-- FIM DE NAVIGATION AUTO -->
+
+            </div>
+
+            <div class="manual-navigation">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
+
+        </div>
+
         <header>
             <nav id="menu">
                 <div>
@@ -168,125 +222,7 @@ if (!isset($_SESSION)) {
 
             <section id="terciary-infor">
                 <div class="reveal">
-                    <!-- <div class="carousel">
-                        <div class="slide">
-                            <div class="slide-content RJ-1">
-                                <h2>Rio de Janeiro</h2>
-                                <p>“A primeira vez foi quando criança, eu tinha no máximo 11 anos, estava em Araruama,
-                                    meus pais andavam atrás de mim pois
-                                    eles diziam que era necessário para que não me perdessem de vista. Pois bem, estava
-                                    tudo normal quando um homem passando
-                                    ao nosso lado colocou a mão por dentro da minha blusa e colocou o pouquinho de peito
-                                    que eu tinha pra fora. Foi uma ação
-                                    rápida e ninguém viu. Me calei e me arrumei rapidamente. Senti vergonha de mim e
-                                    nojo. Até hoje ninguém sabe disso.”
-                                </p>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="slide-content slide-2 RJ-2">
-                                <h2>Rio de Janeiro</h2>
-                                <p>“Estávamos, minha amiga e eu, curtindo o Carnaval em Cabo Frio, há uns 10 anos.
-                                    Passamos por um grupo de homens que nos
-                                    jogou para dentro da roda e disse que tínhamos que beija-los. Eu disse que não os
-                                    beijaria e ele falou: quem não beijar,
-                                    toma porrada. Minha amiga e eu abaixamos a cabeça e tentamos nos proteger com o
-                                    braços. Levamos tapas e socos.”
-                                </p>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="slide-content slide-2 SP">
-                                <h2>São Paulo</h2>
-                                <p>“Eu estava ficando com um cara, sem muita vontade. Minha amiga estava ficando com um
-                                    amigo dele, então, acabou
-                                    acontecendo. Estava beijando ele e estávamos conversando e quando vi, ele abriu a
-                                    calça e pôs o pênis para fora. Na
-                                    hora, eu não entendi e acho que de nervoso, ri, pensando numa brincadeira sem graça
-                                    e disse pra ele “guardar isso”. Ele
-                                    riu, malicioso, pegou o pênis com a mão e me disse “vai, só uma chupadinha!” Aquilo
-                                    me embrulhou o estômago e ainda me
-                                    sentindo meio culpada, me afastei dele. Culpada de que, não sei. Ai, gritei a minha
-                                    amiga que a esperaria na parte
-                                    iluminada dá rua. No outro dia, que fomos de novo pra esse lugar é encontramos essa
-                                    turma, esse cara nem se aproximou.
-                                    Tudo isso deve ter acontecido em 2012 ou 2013 e por alguns dias, ficava com medo de
-                                    chegar perto de homens.”
-                                </p>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="slide-content slide-2 CE-1">
-                                <h2>Ceará</h2>
-                                <p>“Trabalhei em uma empresa bem pequena e era a única menina que almoçava com os
-                                    meninos. Eu escutei algumas coisas que me
-                                    deixaram sem jeito, tipo 'como você se sente sendo a menina mais bonita daqui?’ ou
-                                    ‘casa comigo?’. Até aí, eu até levava
-                                    na brincadeira, mas um dia, um deles fez comentários sobre meus seios, que são
-                                    grandes, o que me deixou extremamente
-                                    desconfortável. Em outra vez, combinamos de fazer cachorro quente no refeitório. Foi
-                                    quando um deles disse: ‘eu trago a
-                                    salsicha e você traz o quê?', e sorriu para mim.”
-                                </p>
-                            </div>
-                        </div>
-                    </div> -->
-                    <div class="carousel">
-                        <ul>
-                            <li style="background-color: #05d405;">
-                                <h2>José</h2>
-                                <p>“A primeira vez foi quando criança, eu tinha no máximo 11 anos, estava em Araruama,
-                                    meus pais andavam atrás de mim pois
-                                    eles diziam que era necessário para que não me perdessem de vista. Pois bem, estava
-                                    tudo normal quando um homem passando
-                                    ao nosso lado colocou a mão por dentro da minha blusa e colocou o pouquinho de peito
-                                    que eu tinha pra fora. Foi uma ação
-                                    rápida e ninguém viu. Me calei e me arrumei rapidamente. Senti vergonha de mim e
-                                    nojo. Até hoje ninguém sabe disso.”</p>
-                            </li>
-                            <li style="background-color: #ff0000; color: #fff;">
-                                <h2>Antônio</h2>
-                                <p>“Estávamos, minha amiga e eu, curtindo o Carnaval em Cabo Frio, há uns 10 anos.
-                                    Passamos por um grupo de homens que nos
-                                    jogou para dentro da roda e disse que tínhamos que beija-los. Eu disse que não os
-                                    beijaria e ele falou: quem não beijar,
-                                    toma porrada. Minha amiga e eu abaixamos a cabeça e tentamos nos proteger com o
-                                    braços. Levamos tapas e socos.”</p>
-                            </li>
-                            <li style="background-color: #ff0000; color: #fff;">
-                                <h2>Léo</h2>
-                                <p>“Eu estava ficando com um cara, sem muita vontade. Minha amiga estava ficando com um
-                                    amigo dele, então, acabou
-                                    acontecendo. Estava beijando ele e estávamos conversando e quando vi, ele abriu a
-                                    calça e pôs o pênis para fora. Na
-                                    hora, eu não entendi e acho que de nervoso, ri, pensando numa brincadeira sem graça
-                                    e disse pra ele “guardar isso”. Ele
-                                    riu, malicioso, pegou o pênis com a mão e me disse “vai, só uma chupadinha!” Aquilo
-                                    me embrulhou o estômago e ainda me
-                                    sentindo meio culpada, me afastei dele. Culpada de que, não sei. Ai, gritei a minha
-                                    amiga que a esperaria na parte
-                                    iluminada dá rua. No outro dia, que fomos de novo pra esse lugar é encontramos essa
-                                    turma, esse cara nem se aproximou.
-                                    Tudo isso deve ter acontecido em 2012 ou 2013 e por alguns dias, ficava com medo de
-                                    chegar perto de homens.”</p>
-                            </li>
-                            <li style="background-color: yellow;">
-                                <p>“Trabalhei em uma empresa bem pequena e era a única menina que almoçava com os
-                                    meninos. Eu escutei algumas coisas que me
-                                    deixaram sem jeito, tipo 'como você se sente sendo a menina mais bonita daqui?’ ou
-                                    ‘casa comigo?’. Até aí, eu até levava
-                                    na brincadeira, mas um dia, um deles fez comentários sobre meus seios, que são
-                                    grandes, o que me deixou extremamente
-                                    desconfortável. Em outra vez, combinamos de fazer cachorro quente no refeitório. Foi
-                                    quando um deles disse: ‘eu trago a
-                                    salsicha e você traz o quê?', e sorriu para mim.”</p>
-                            </li>
-                        </ul>
-                    </div>
 
-                    <button id="btn-theme">Mudar Tema</button>
-                    <button class="carousel-prev">Anterior</button>
-                    <button class="carousel-next">Próximo</button>
                 </div>
             </section>
 
@@ -337,8 +273,6 @@ if (!isset($_SESSION)) {
         </footer>
 
         <script src="assets/js/index.js"></script>
-        <script src="assets/js/reveal.js"></script>
-        <script src="assets/js/scroll.js"></script>
     </body>
 
 </html>
