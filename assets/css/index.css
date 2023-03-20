@@ -29,95 +29,6 @@
     width: 0px;
 }
 
-/* SLIDE DE FUNDO */
-
-.slider {
-    margin: 0 auto;
-    width: 100%;
-    height: 400px;
-    /* z-index: -1; */
-    overflow: hidden;
-}
-
-.slides {
-    display: flex;
-    height: 400px;
-    width: 400%;
-}
-
-.slides input {
-    display: none;
-}
-
-.slide {
-    width: 25%;
-    position: relative;
-}
-
-.slide img {
-    width: 800px;
-}
-
-.manual-navigation {
-    position: absolute;
-    width: 800px;
-    margin-top: -40px;
-    display: flex;
-    justify-content: center;
-}
-
-.manual-btn {
-    border: 2px solid #fff;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
-}
-
-.manual-btn:not(:last-child) {
-    margin-right: 40px;
-}
-
-.manual-btn:hover {
-    background-color: #fff;
-}
-
-#radio1:checked ~ .first{
-    margin-left: 0;
-}
-
-#radio2:checked ~ .first{
-    margin-left: -25%;
-}
-
-#radio3:checked ~ .first{
-    margin-left: -50%;
-}
-
-#radio4:checked ~ .first{
-    margin-left: -75%;
-}
-
-.navigation-auto div {
-    border: 2px solid #20a6ff;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
-}
-
-.navigation-auto div:not(:last-child) {
-    margin-right: 40px;
-}
-
-.navigation-auto {
-    position: absolute;
-    width: 800px;
-    margin-top: 360px;
-    display: flex;
-    justify-content: center;
-}
-
 /* LOGO */
 
 .podfalar-logo {
@@ -159,7 +70,8 @@
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 1000;
+    left: 0;
+    z-index: 999;
     transition: background-color .4s ease-out;
 }
 
@@ -174,6 +86,10 @@
     gap: 15px;
     cursor: pointer;
     transition: all .6s linear;
+}
+
+.menu-toggle {
+    display: none;
 }
 
 .lista:hover> :not(:hover) {

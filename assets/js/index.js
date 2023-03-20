@@ -70,3 +70,9 @@ window.addEventListener('scroll', function () {
         menu.classList.remove('scrolled');
     }
 });
+
+/* NAVBAR RESPONSIVO */
+
+function openNav() {
+    alert("TESTE");
+}
