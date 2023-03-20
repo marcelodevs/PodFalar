@@ -27,8 +27,7 @@ $sql = mysqli_query(
     "INSERT INTO cadastro(nome, email, senha, idade, genero)
     VALUES ('$nome', '$email', '$senha', '$idade', '$genero')"
 );
-if ($sql) 
-{
+if ($sql) {
     echo "
     <script>
         alert('Registro: Bem Vindo!');
@@ -41,5 +40,5 @@ if ($sql)
         alert('Registro: ERROR');
     </script>
     ";
-    header("Location: ../../registar.html"); 
+    header("Location: ../../registar.html");
 }

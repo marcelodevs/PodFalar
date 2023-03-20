@@ -72,7 +72,3 @@ window.addEventListener('scroll', function () {
 });
 
 /* NAVBAR RESPONSIVO */
-
-function openNav() {
-    alert("TESTE");
-}
