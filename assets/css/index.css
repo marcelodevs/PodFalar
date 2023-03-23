@@ -29,6 +29,10 @@
     width: 0px;
 }
 
+body {
+    background-color: #263420;
+}
+
 /* LOGO */
 
 .podfalar-logo {
@@ -72,11 +76,8 @@
     right: 0;
     left: 0;
     z-index: 999;
-    transition: background-color .4s ease-out;
-}
-
-#menu.scrolled {
     background-color: #f5f5dc;
+    transition: background-color .4s ease-out;
 }
 
 .lista {
@@ -174,7 +175,6 @@
 #main-text-img {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     padding: 63px;
 }
@@ -183,14 +183,10 @@
     display: flex;
     margin-left: -15%;
     height: 80vh;
-    width: 80vw;
     animation: pula 5s linear alternate infinite;
 }
 
 .podfalar-txt-main {
-    border: 5px solid #989cc7;
-    background-color: #989cc7;
-    border-radius: 50%;
     font-size: 1.3em;
     padding: 3.9em;
     text-align: center;
@@ -199,18 +195,6 @@
     height: 77vh;
     font-family: KanitItalic;
     user-select: none;
-    box-shadow: 6px 6px 0 -1px #263fad
-}
-
-.podfalar-txt-main::before {
-    content: '';
-    position: absolute;
-    right: 6%;
-    top: 73%;
-    border-style: solid;
-    border-width: 120px 30px 0 30px;
-    border-color: #989cc7 transparent transparent transparent;
-    transform: rotate(-40deg);
 }
 
 /* VOLTAR PARA CIMA */
@@ -218,7 +202,7 @@
 .voltar {
     border-radius: 20px;
     border: none;
-    background-color: #2e14ed;
+    background-color: #f0ec0ea9;
     width: 2em;
     height: 2em;
     z-index: 20;
