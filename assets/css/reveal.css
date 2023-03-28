@@ -1,29 +1,15 @@
 .reveal {
-    position: relative; /* DEIXA A POSIÇÃO RELATIVA */
-    transform: translateY(144px); /* TRANSFORMA O ELEMENTO, MOVENDO ELE NO EIXO Y EM 144PX */
+    position: relative;
+    /* DEIXA A POSIÇÃO RELATIVA */
+    transform: translateY(144px);
+    /* TRANSFORMA O ELEMENTO, MOVENDO ELE NO EIXO Y EM 144PX */
     opacity: 0;
-    transition: all 1s ease; /* DEIXA UMA TRANSIÇÃO DE 1s SUAVE */
+    transition: all 1s ease;
+    /* DEIXA UMA TRANSIÇÃO DE 1s SUAVE */
 }
 
 .reveal.active {
     transform: translateY(0);
     opacity: 1;
     text-align: center;
-}
-
-#second-infor {
-    background-color: rgb(252, 248, 237);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20%;
-}
-
-#terciary-infor {
-    background-color: pink;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10%;
 }

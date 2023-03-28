@@ -33,6 +33,18 @@ if ($sql) {
         alert('Registro: Bem Vindo!');
     </script>
     ";
+    echo "
+    <script>
+        var nome = document.querySelector('.nome');
+        var email = document.querySelector('.email');
+        var genero = document.querySelector('.genero');
+        var idade = document.querySelector('.idade');
+        nome.innerText = $nome;
+        email.innerText = $email;
+        genero.innerText = $genero;
+        idade.innerText = $idade;
+    </script>
+    ";
     header("Location: ../../index.html");
 } else {
     echo "

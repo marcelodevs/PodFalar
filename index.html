@@ -1,9 +1,5 @@
 <?php
-
-if (!isset($_SESSION)) {
-    session_start();
-}
-
+include_once("");
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +37,7 @@ if (!isset($_SESSION)) {
                     <a href="auto-ajuda.html"
                         class="link">Auto-ajuda</a>
                     <a href="listar-dicas.html"
-                        class="link">Listar Dicas</a>
+                        class="link">Lista de Dicas</a>
                 </ul>
                 <div class="menu-toggle">
                     <a href="#"
@@ -57,10 +53,7 @@ if (!isset($_SESSION)) {
                                 class="user">
                         </summary>
                         <section class="details">
-                            <h3>
-                                <?php
-                            // include_once('php/buscar-nome.php');
-                            ?>
+                            <h3 class="nome">
                                 <abbr title="Editar perfil"
                                     class="abreviation">
                                     <a href="assets/html/mudar-registros.html"
@@ -74,25 +67,16 @@ if (!isset($_SESSION)) {
                                 </abbr>
                             </h3>
                             <hr>
-                            <span>
+                            <span class="email">
                                 Email:
-                                <?php
-                            include_once("php/buscar-email.php");
-                            ?>
                             </span>
                             <br>
-                            <span>
+                            <span class="genero">
                                 Gênero:
-                                <?php
-                            include_once("php/buscar-genero.php");
-                            ?>
                             </span>
                             <br>
-                            <span>
+                            <span class="idade">
                                 Idade:
-                                <?php
-                            include_once("php/buscar-idade.php");
-                            ?>
                             </span>
                         </section>
                     </details>
@@ -101,21 +85,7 @@ if (!isset($_SESSION)) {
         </header>
 
         <main>
-            <section id="main-text-img">
-                <img src="assets/img/PodFalar-removebg-preview.png"
-                    class="podfalar-logo-main">
-                <!-- <iframe src="https://prezi.com/p/embed/tzc1e0qqs_at/"
-                    id="iframe_container"
-                    frameborder="0"
-                    webkitallowfullscreen=""
-                    mozallowfullscreen=""w
-                    allowfullscreen=""
-                    allow="autoplay; fullscreen"
-                    height="315"
-                    width="560"></iframe> -->
-            </section>
-
-            <span class="txt-logo">‘PodPah, PodFalar,<br> nós vamos te ajudar!’</span>
+            <section id="main-text-img"></section>
 
             <section id="second-infor">
                 <div class="reveal span-ballon-info">
@@ -131,7 +101,8 @@ if (!isset($_SESSION)) {
                         difícil de abordar. Esse é o propósito do nosso site, ensinar de vez sobre a educação sexual de
                         forma
                         delicada e diferente.</p>
-                    <div class="ballon-legend">
+                        <br><br><br><br><br><br><br>
+                    <div class="table-legend">
                         <table class="tabela">
                             <span class="table-depoi">Depoimentos</span>
                             <thead class="tbl-head">
@@ -150,7 +121,6 @@ if (!isset($_SESSION)) {
                                 </tr>
                             </tbody>
                         </table>
-
                     </div>
                     <div class="txt-chat">
                         <span>Acesse nosso chatBot para se auto-ajudar</span>
@@ -169,7 +139,7 @@ if (!isset($_SESSION)) {
 
             <section id="terciary-infor">
                 <div class="reveal">
-
+                    
                 </div>
             </section>
 

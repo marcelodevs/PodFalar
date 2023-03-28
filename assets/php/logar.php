@@ -12,4 +12,10 @@ if ($emailLogin == $email and $senhaLogin == $senha) {
     </script>
     ";
     header("Location: ../index.html");
+} else {
+    echo "
+    <script>
+        alert('Login: ERROR');
+    </script>
+    ";
 }

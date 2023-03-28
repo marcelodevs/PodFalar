@@ -20,3 +20,10 @@
         transform: scale(1);
     }
 }
+
+@keyframes sobe-desce {
+    100% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}

@@ -39,3 +39,25 @@ function reveal() {
 window.addEventListener("scroll", reveal);
 
 /* NAVBAR RESPONSIVO */
+
+
+/* MENU MUDANDO DE COR */
+
+const menu = document.querySelector('#menu');
+const nav = document.querySelector(".link");
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0)
+    {
+        menu.classList.add('scrolled');
+        nav.classList.add('scrolled');
+    } else
+    {
+        menu.classList.remove('scrolled');
+        nav.classList.remove('scrolled');
+    }
+});
+
+/* CARROUSEL */
+
+
