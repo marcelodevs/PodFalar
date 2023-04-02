@@ -27,3 +27,18 @@
         transform: scale(1.1);
     }
 }
+
+@keyframes menu-in {
+    0% {
+        clip-path: ellipse(60% 60% at 0% 50%);
+    }
+
+    100% {
+        clip-path: ellipse(120% 120% at 0% 50%);
+    }
+}
+
+@keyframes appear {
+    0% { opacity: 0; translate: -30px 0; }
+    100% { opacity: 1; }
+}

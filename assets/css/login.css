@@ -11,3 +11,28 @@ section {
 body {
     background-color: #9A616D;
 }
+
+.voltar {
+    width: 4em;
+    height: 4em;
+    z-index: 999;
+    position: absolute;
+    top: 5%;
+    left: 1%;
+    cursor: pointer;
+    animation: cair 5s ease-in-out;
+}
+
+@keyframes cair {
+    0% {
+        top: -20%;
+    }
+
+    50% {
+        top: 6%;
+    }
+
+    100% {
+        top: 5%;
+    }
+}

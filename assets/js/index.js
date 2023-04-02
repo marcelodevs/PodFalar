@@ -40,6 +40,9 @@ window.addEventListener("scroll", reveal);
 
 /* NAVBAR RESPONSIVO */
 
+const toggleMenu = () => {
+    document.body.classList.toggle("open");
+}
 
 /* MENU MUDANDO DE COR */
 

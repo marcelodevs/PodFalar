@@ -1,18 +1,21 @@
-<?php
-include_once("");
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
-        <link rel="stylesheet" href="assets/css/index.css">
-        <link rel="stylesheet" href="assets/css/animation/keyframe.css">
-        <link rel="stylesheet" href="assets/css/media-query.css">
+        <meta http-equiv="X-UA-Compatible"
+            content="IE=edge">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon"
+            href="assets/img/logo.png"
+            type="image/x-icon">
+        <link rel="stylesheet"
+            href="assets/css/index.css">
+        <link rel="stylesheet"
+            href="assets/css/animation/keyframe.css">
+        <link rel="stylesheet"
+            href="assets/css/media-query.css">
         <title>PodFalar</title>
     </head>
 
@@ -21,7 +24,8 @@ include_once("");
         <header>
             <nav id="menu">
                 <div>
-                    <span class="logo" translate="no">
+                    <span class="logo"
+                        translate="no">
                         <img src="assets/img/podfalar-logo.png"
                             class="podfalar-logo">
                         <span class="logo-txt-lateral">PodFalar</span>
@@ -37,13 +41,26 @@ include_once("");
                     <a href="auto-ajuda.html"
                         class="link">Auto-ajuda</a>
                     <a href="listar-dicas.html"
-                        class="link">Lista de Dicas</a>
+                        class="link">Listar de Dicas</a>
                 </ul>
-                <div class="menu-toggle">
-                    <a href="#"
-                        class="menu-open"></a>
-                    <a href="#"
-                        class="menu-close"><i class="fas fa-times"></i></a>
+                
+                <div class="menu-responsive">
+                    <button class="navbar burguer"
+                        onclick="toggleMenu()"></button>
+                    <div class="menu">
+                        <nav>
+                            <a href="#"
+                                style="animation-delay: .2s;">Home</a>
+                            <a href="depoimentos.html"
+                                style="animation-delay: .3s;">Depoimentos</a>
+                            <a href="registar.html"
+                                style="animation-delay: .4s;">Registrar</a>
+                            <a href="auto-ajuda.html"
+                                style="animation-delay: .5s;">Auto-ajuda</a>
+                            <a href="listar-dicas.html"
+                                style="animation-delay: .6s;">Listar dicas</a>
+                        </nav>
+                    </div>
                 </div>
                 <span>
                     <details>
@@ -67,16 +84,16 @@ include_once("");
                                 </abbr>
                             </h3>
                             <hr>
-                            <span class="email">
-                                Email:
+                            <span>
+                                Email: <span class="email"></span>
                             </span>
                             <br>
-                            <span class="genero">
-                                Gênero:
+                            <span>
+                                Gênero: <span class="genero">m</span>
                             </span>
                             <br>
-                            <span class="idade">
-                                Idade:
+                            <span>
+                                Idade: <span class="idade"></span>
                             </span>
                         </section>
                     </details>
@@ -90,18 +107,21 @@ include_once("");
             <section id="second-infor">
                 <div class="reveal span-ballon-info">
                     <p class="podfalar-txt-main">
-                        A educação sexual é um tema importante e relevante para todas as pessoas, independentemente de sua
+                        A educação sexual é um tema importante e relevante para todas as pessoas, independentemente de
+                        sua
                         idade,
                         gênero ou
-                        orientação sexual. A educação sexual aborda muitas questões diferentes relacionadas à sexualidade,
+                        orientação sexual. A educação sexual aborda muitas questões diferentes relacionadas à
+                        sexualidade,
                         incluindo saúde
                         sexual, relações interpessoais, consentimento, gravidez, prevenção de doenças sexualmente
                         transmissíveis
-                        e muito mais. Embora a educação sexual seja importante, muitas vezes pode ser um assunto delicado e
+                        e muito mais. Embora a educação sexual seja importante, muitas vezes pode ser um assunto
+                        delicado e
                         difícil de abordar. Esse é o propósito do nosso site, ensinar de vez sobre a educação sexual de
                         forma
                         delicada e diferente.</p>
-                        <br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br><br>
                     <div class="table-legend">
                         <table class="tabela">
                             <span class="table-depoi">Depoimentos</span>
@@ -139,7 +159,7 @@ include_once("");
 
             <section id="terciary-infor">
                 <div class="reveal">
-                    
+
                 </div>
             </section>
 

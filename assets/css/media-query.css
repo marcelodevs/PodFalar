@@ -1,0 +1,9 @@
+@media screen and (max-width: 600px) {
+    .menu-responsive {
+        display: block;
+    }
+
+    .lista {
+        display: none;
+    }
+}
