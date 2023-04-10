@@ -1,6 +1,6 @@
 <?php
 
-// print_r($_REQUEST);
+session_start();
 
 include_once("conexao.php"); // Inclue a conexão
 
@@ -9,18 +9,6 @@ $email = filter_input(INPUT_POST, "email");
 $senha = filter_input(INPUT_POST, "senha");
 $idade = filter_input(INPUT_POST, "idade");
 $genero = filter_input(INPUT_POST, "genero");
-
-// Verfica se qual o gênero foi escolhido
-if ($genero == "rgb(67, 67, 164)") {
-    // Muda a variável de acordo com o valor dos inputs
-    $genero = "Masculino";
-} else if ($genero == "pink") {
-    $genero = "Feminino";
-} else if ($genero == "linear-gradient(to right, #ffc0cb, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #ee82ee)") {
-    $genero = "LGBTQIA+";
-} else if ($genero == "gray") {
-    $genero = "Prefiro não dizer";
-}
 
 $sql = mysqli_query(
     $conexao,
@@ -35,17 +23,10 @@ if ($sql) {
     ";
     echo "
     <script>
-        var nome = document.querySelector('.nome');
-        var email = document.querySelector('.email');
-        var genero = document.querySelector('.genero');
-        var idade = document.querySelector('.idade');
-        nome.innerText = $nome;
-        email.innerText = $email;
-        genero.innerText = $genero;
-        idade.innerText = $idade;
+        alert('Agora realize o login para entrar no site :)');
+        setInterval(()=>{window.location.href= '../../registar.html'}, 2000);
     </script>
     ";
-    header("Location: ../../index.html");
 } else {
     echo "
     <script>

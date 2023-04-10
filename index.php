@@ -1,3 +1,20 @@
+<?php
+session_start();
+include_once('./assets/php/conexao.php');
+if (!isset($_SESSION['login_user'])) { //Verifica se existe a sessão "login_user"
+    $id = '';
+} else {
+    $id = $_SESSION['login_user'];
+}
+$query = "SELECT * FROM cadastro WHERE codigo = '$id'";
+$result = mysqli_query($conexao, $query);
+
+if (mysqli_num_rows($result) == 1) { //Verfica se existe alguma coluna de acordo com a query anterior
+    $dadosUser = mysqli_fetch_assoc($result);
+} else {
+    $dadosUser = '';
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -43,7 +60,6 @@
                     <a href="listar-dicas.html"
                         class="link">Listar de Dicas</a>
                 </ul>
-                
                 <div class="menu-responsive">
                     <button class="navbar burguer"
                         onclick="toggleMenu()"></button>
@@ -70,7 +86,15 @@
                                 class="user">
                         </summary>
                         <section class="details">
-                            <h3 class="nome">
+                            <h3 class="nome"
+                                style="font-family: sans-serif;">
+                                <?php
+                            if ($dadosUser == '') {
+                                echo '';
+                            } else {
+                                echo $dadosUser['nome'];
+                            }
+                            ?>
                                 <abbr title="Editar perfil"
                                     class="abreviation">
                                     <a href="assets/html/mudar-registros.html"
@@ -84,17 +108,43 @@
                                 </abbr>
                             </h3>
                             <hr>
-                            <span>
-                                Email: <span class="email"></span>
-                            </span>
-                            <br>
-                            <span>
-                                Gênero: <span class="genero">m</span>
-                            </span>
-                            <br>
-                            <span>
-                                Idade: <span class="idade"></span>
-                            </span>
+                            <span style="font-family: sans-serif;">
+                                Email:
+                                <span style="font-family: sans-serif;">
+                                    <?php
+                                if ($dadosUser == '') {
+                                    echo '';
+                                } else {
+                                    echo $dadosUser['email'];
+                                }
+                                ?>
+                                </span>
+                                <br>
+                                <span style="font-family: sans-serif;">
+                                    Gênero:
+                                    <span style="font-family: sans-serif;">
+                                        <?php
+                                    if ($dadosUser == '') { // Verifica se os dados do usuário é nulo
+                                        echo '';
+                                    } else {
+                                        echo $dadosUser['genero'];
+                                    }
+                                    ?>
+                                    </span>
+                                </span>
+                                <br>
+                                <span style="font-family: sans-serif;">
+                                    Idade:
+                                    <span style="font-family: sans-serif;">
+                                        <?php
+                                    if ($dadosUser == '') {
+                                        echo '';
+                                    } else {
+                                        echo $dadosUser['idade'];
+                                    }
+                                    ?>
+                                    </span>
+                                </span>
                         </section>
                     </details>
                 </span>
@@ -107,7 +157,8 @@
             <section id="second-infor">
                 <div class="reveal span-ballon-info">
                     <p class="podfalar-txt-main">
-                        A educação sexual é um tema importante e relevante para todas as pessoas, independentemente de
+                        A educação sexual é um tema importante e relevante para todas as pessoas, independentemente
+                        de
                         sua
                         idade,
                         gênero ou
@@ -118,7 +169,8 @@
                         transmissíveis
                         e muito mais. Embora a educação sexual seja importante, muitas vezes pode ser um assunto
                         delicado e
-                        difícil de abordar. Esse é o propósito do nosso site, ensinar de vez sobre a educação sexual de
+                        difícil de abordar. Esse é o propósito do nosso site, ensinar de vez sobre a educação sexual
+                        de
                         forma
                         delicada e diferente.</p>
                     <br><br><br><br><br><br><br>
@@ -153,6 +205,63 @@
                                 Conversar
                             </a>
                         </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quarta-infor">
+                <div class="reveal">
+                    <div class="container"
+                        id="container">
+                        <div class="form-container sign-up-container">
+                            <form action="assets/php/registrar.php">
+                                <h1 class="create-conta">Criar Conta</h1>
+                                <input type="text"
+                                    placeholder="Nome"
+                                    name="nome" />
+                                <input type="email"
+                                    placeholder="Email"
+                                    name="email" />
+                                <input type="password"
+                                    placeholder="Password"
+                                    name="senha" />
+                                <input type="number"
+                                    placeholder="Idade"
+                                    name="idade" />
+                                <input type="text"
+                                    placeholder="Gênero"
+                                    name="genero" />
+                                <button class="btn">Inscrever-se</button>
+                            </form>
+                        </div>
+                        <div class="form-container sign-in-container">
+                            <form action="assets/php/logar.php">
+                                <h1 class="create-conta">Entrar</h1>
+                                <input type="email"
+                                    placeholder="Email" />
+                                <input type="password"
+                                    placeholder="Password" />
+                                <a href="#">Esqueceu sua senha?</a>
+                                <button class="btn">Entrar</button>
+                            </form>
+                        </div>
+                        <div class="overlay-container">
+                            <div class="overlay">
+                                <div class="overlay-panel overlay-left">
+                                    <h1 class="create-conta">Bem vindo de volta!</h1>
+                                    <p class="p">Para se manter conectado conosco, faça o login com suas informações
+                                        pessoais</p>
+                                    <button class="ghost btn"
+                                        id="signIn">Entrar</button>
+                                </div>
+                                <div class="overlay-panel overlay-right">
+                                    <h1 class="create-conta">Olá amigo!</h1>
+                                    <p class="p">Introduza os seus dados pessoais e comece a viajar connosco</p>
+                                    <button class="ghost btn"
+                                        id="signUp">Inscrever-se</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -196,16 +305,6 @@
                     class="voltar">⬆</button>
             </section>
         </main>
-
-        <footer id="footer">
-            <section class="footer-infor reveal">
-                <span>Projeto escolar desenvolvido por:</span>
-                <div class="proj">
-                    <span>Escola</span>
-                    <span>Alunos</span>
-                </div>
-            </section>
-        </footer>
 
         <script src="assets/js/index.js"></script>
     </body>

@@ -64,3 +64,33 @@ window.addEventListener('scroll', () => {
 /* CARROUSEL */
 
 
+
+/* TELA DE LOGIN */
+
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+    container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+    container.classList.remove("right-panel-active");
+});
+
+/* USUÁRIO */
+
+const details = document.querySelector('details');
+const body = document.querySelector('body');
+
+details.addEventListener('click', () => {
+    if (details.open)
+    {
+        body.classList.add('details-opened');
+    } else
+    {
+        body.classList.remove('details-opened');
+    }
+});
+

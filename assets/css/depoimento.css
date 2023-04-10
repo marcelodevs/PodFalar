@@ -1,38 +1,78 @@
+html, body, .carousel {
+    height: 100%;
+}
+
+input { display: none; }
+
 .carousel {
+    overflow: hidden;
     position: relative;
-    height: 300px;
     width: 100%;
 }
 
-.slide {
+.carousel-txt {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    z-index: 1;
+    display: flex;
+    width: 300%;
     height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: .5s;
 }
 
-.slide.active {
-    opacity: 1;
+.carousel-txt img {
+    width: 100%;
+    object-fit: cover;
 }
 
-.slide-content {
+.carousel-controls {
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.carousel-controls, .dots {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 50vw;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
 }
 
-.slide-content h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+label {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
 }
 
-.slide-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+.dots {
+    left: 0;
+    bottom: 0;
+    height: 400px;
+    background: linear-gradient(transparent, #000 90%);
+    gap: 12px;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+input:nth-child(1):checked ~ .dots label:nth-child(1),
+input:nth-child(2):checked ~ .dots label:nth-child(2),
+input:nth-child(3):checked ~ .dots label:nth-child(3) {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+input:nth-child(1):checked ~ .carousel-txt {
+    translate: 0;
+}
+
+input:nth-child(2):checked ~ .carousel-txt {
+    translate: -100vw;
+}
+
+input:nth-child(3):checked ~ .carousel-txt {
+    translate: -200vw;
 }
