@@ -1,15 +1,11 @@
 .reveal {
     position: relative;
-    /* DEIXA A POSIÇÃO RELATIVA */
     transform: translateY(144px);
-    /* TRANSFORMA O ELEMENTO, MOVENDO ELE NO EIXO Y EM 144PX */
     opacity: 0;
     transition: all 1s ease;
-    /* DEIXA UMA TRANSIÇÃO DE 1s SUAVE */
 }
 
 .reveal.active {
     transform: translateY(0);
     opacity: 1;
-    text-align: center;
 }

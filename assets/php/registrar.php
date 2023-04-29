@@ -17,13 +17,8 @@ $sql = mysqli_query(
 );
 if ($sql) {
     echo "
-    <script>
-        alert('Registro: Bem Vindo!');
-    </script>
-    ";
-    echo "
-    <script>
-        alert('Agora realize o login para entrar no site :)');
+    <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'>
+        swal('Título da mensagem', 'Texto da mensagem', 'success');
         setInterval(()=>{window.location.href= '../../registar.html'}, 2000);
     </script>
     ";

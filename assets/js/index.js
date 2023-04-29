@@ -46,6 +46,7 @@ const toggleMenu = () => {
 
 /* MENU MUDANDO DE COR */
 
+const btnback = document.querySelector(".voltar");
 const menu = document.querySelector('#menu');
 const nav = document.querySelector(".link");
 
@@ -54,15 +55,37 @@ window.addEventListener('scroll', () => {
     {
         menu.classList.add('scrolled');
         nav.classList.add('scrolled');
+        btnback.style.display = "block";
+        btnback.classList.add("transition");
     } else
     {
         menu.classList.remove('scrolled');
         nav.classList.remove('scrolled');
+        btnback.style.display = "none";
+        btnback.classList.add("transition");
     }
 });
 
 /* CARROUSEL */
 
+const prevButton = document.querySelector('.prev-button');
+const nextButton = document.querySelector('.next-button');
+const carouselItems = document.querySelector('.carousel-items');
+const carouselItemWidth = document.querySelector('.carousel-item').offsetWidth;
+
+let position = 0;
+
+nextButton.addEventListener('click', () => {
+    position -= carouselItemWidth;
+    position = Math.max(position, -carouselItemWidth * (carouselItems.children.length - 1));
+    carouselItems.style.transform = `translateX(${position}px)`;
+});
+
+prevButton.addEventListener('click', () => {
+    position += carouselItemWidth;
+    position = Math.min(position, 0);
+    carouselItems.style.transform = `translateX(${position}px)`;
+});
 
 
 /* TELA DE LOGIN */
@@ -92,5 +115,36 @@ details.addEventListener('click', () => {
     {
         body.classList.remove('details-opened');
     }
+});
+
+/* BARRA DE PROGRESSÃO */
+
+// Seleciona o elemento da barra de progresso
+const progressBar = document.getElementById("progress-bar");
+
+// Obtém a altura do documento e do viewport
+const documentHeight = document.body.scrollHeight;
+const viewportHeight = window.innerHeight;
+
+// Atualiza a largura da barra de progresso de acordo com a posição da página
+window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY;
+    const progress = (scrollPosition / (documentHeight - viewportHeight)) * 100;
+    progressBar.style.width = `${progress}%`;
+});
+
+/* LOADING */
+
+// Seleciona o overlay
+var overlay = document.getElementById("loading-overlay");
+
+// Esconde o overlay quando a página estiver carregada
+window.addEventListener("load", function () {
+    overlay.style.display = "none";
+});
+
+// Mostra o overlay quando a página começar a carregar
+window.addEventListener("beforeunload", function () {
+    overlay.style.display = "flex";
 });
 

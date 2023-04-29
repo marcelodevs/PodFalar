@@ -27,9 +27,8 @@ if (isset($_POST['emailLogin'])); {
     } else {
         echo "
             <script>
-            alert('Login: ERROR');
+                alert('Login: ERROR');
             </script>
         ";
     }
 }
-?>
