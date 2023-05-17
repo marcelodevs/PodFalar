@@ -1,33 +1,90 @@
+<!-- <?php
+
+session_start();
+include_once("../php/conexao.php");
+
+$id_user = $_SESSION['login_user'];
+if (!$id_user) {
+    echo
+    "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+    <script>
+        swal({
+            title: 'ERROR',
+            text: 'Parece que você não fez o login!',
+            icon: 'warning',
+            buttons: ['Cancelar', 'Ok'],
+        })
+            .then((confirm) => {
+            if (confirm) location.href = '../../registar.php'; 
+            else location.href = '../../index.php'; 
+        });
+        document.querySelector('body').classList.add('none');
+    </script>";
+}
+
+$query = "SELECT nome FROM cadastro WHERE codigo = $id_user";
+$result = mysqli_query($conexao, $query);
+
+if (mysqli_num_rows($result) == 1) {
+    $dadosUser = mysqli_fetch_assoc($result);
+} else {
+    $dadosUser = '';
+}
+
+?> -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/chat.css">
-    <title>ChatBot - PodFalar</title>
-</head>
-<body>
 
-    <!-- HTML para o overlay -->
-    <div id="loading-overlay">
-        <img src="../img/carregador.png"
-            alt="Loading"
-            class="loading-image">
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible"
+            content="IE=edge">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon"
+            href="../img/logo.png"
+            type="image/x-icon">
+        <link rel="stylesheet"
+            href="chat.css">
+        <title>ChatBot - PodFalar</title>
+    </head>
 
-    <a href="../../index.html">
-        <img src="../img/botao-voltar.png" class="img-btn-back">
-    </a>
+    <body>
 
-    <div class="chat-input-saudacao">
-        <button class="msg faded">Olá</button>
-        <button class="msg faded"></button>
-    </div>
+        <!-- HTML para o overlay -->
+        <div id="loading-overlay">
+            <img src="../img/carregador.png"
+                alt="Loading"
+                class="loading-image">
+        </div>
 
-    <ol class="chat-list"></ol>
+        <a href="../../index.php">
+            <img src="../img/botao-voltar.png"
+                class="img-btn-back">
+        </a>
 
-    <script src="../js/chat.js"></script>
-</body>
+        <div class="chat-input-pergunta">
+            <input type="text"
+                class="msg-pergunta">
+            <!-- <button disabled>kasdj</button> -->
+            <button class="enviar">➡️</button>
+        </div>
+
+        <section class="msger">
+            <header class="msger-header">
+                <div class="msger-header-title">
+                    <i class="fas fa-comment-alt">PodFalar</i>
+                </div>
+                <div class="msger-header-options">
+                    <span><i class="fas fa-cog"></i></span>
+                </div>
+            </header>
+
+            <main class="msger-chat"></main>
+        </section>
+
+        <script src="chat.js"></script>
+    </body>
+
 </html>

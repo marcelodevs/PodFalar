@@ -46,7 +46,7 @@ a {
 button {
     border-radius: 20px;
     border: 1px solid #000;
-    background-image: linear-gradient(to left, #efa5d9, #b78fcc);
+    background: pink;
     color: #000;
     font-size: 12px;
     font-weight: bold;
@@ -197,7 +197,7 @@ input {
 .overlay-left {
     transform: translateX(-20%);
     position: absolute;
-        top: 20%;
+    top: 20%;
 }
 
 .container.right-panel-active .overlay-left {
@@ -233,31 +233,6 @@ input {
     top: 50%;
 }
 
-footer {
-    background-color: #222;
-    color: #fff;
-    font-size: 14px;
-    bottom: 0;
-    position: fixed;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 999;
-}
-
-footer p {
-    margin: 10px 0;
-}
-
-footer i {
-    color: red;
-}
-
-footer a {
-    color: #3c97bf;
-    text-decoration: none;
-}
-
 .img-btn-back {
     width: 3em;
     height: 3em;
@@ -271,7 +246,44 @@ footer a {
     from {
         top: -50px;
     }
+
     to {
         top: 15%;
     }
+}
+
+dialog::backdrop {
+    background-color: rgba(54, 54, 54, .8);
+}
+
+.dialogo {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+dialog {
+    border: none;
+    border-radius: 8px;
+    width: 20%;
+    text-align: center;
+    color: #13747d;
+    font-weight: 900;
+    font-size: 2em;
+    background: #0abfbc;
+}
+
+dialog button {
+    color: #fff;
+    padding: 7px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 4em;
+    box-shadow: 0 0 8px rgba(0 0 0 .3);
+}
+
+dialog p {
+    font-weight: 800;
 }
