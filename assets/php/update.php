@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 include_once('conexao.php');
 
@@ -14,6 +13,18 @@ if (mysqli_num_rows($result) == 1) {
     $id = $dadosUser['codigo'];
 }
 
-$data = json_decode(file_get_contents("php://input"), true);
+if (isset($_POST['update'])) {
+    $nomeUpdate = $_POST['nome'];
+    $emailUpdate = $_POST['email'];
+    $senhaUpdate = $_POST['senha'];
+    $idadeUpdate = $_POST['idade'];
+    $generoUpdate = $_POST['genero'];
 
-$update = mysqli_query($conexao, "UPDATE cadastro SET nome = '$nomeUpdate', email = '$emailUpdate', senha = '$senhaUpdate', idade = '$idadeUpdate', genero = '$generoUpdate' WHERE codigo = '$id'");
+    $update = mysqli_query($conexao, "UPDATE cadastro SET nome = '$nomeUpdate', email = '$emailUpdate', senha = '$senhaUpdate', idade = '$idadeUpdate', genero = '$generoUpdate' WHERE codigo = '$id'");
+
+    if ($update) {
+        echo "Dados atualizados com sucesso!";
+    } else {
+        echo "Erro ao atualizar os dados.";
+    }
+}

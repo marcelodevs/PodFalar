@@ -1,165 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible"
-            content="IE=edge">
-        <meta name="viewport"
-            content="width=device-width, initial-scale=1.0">
-        <title>PodFalar - Testes</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                font-family: Arial, Helvetica, sans-serif;
-            }
-
-            body {
-                background-color: rgba(0, 0, 0, .4);
-            }
-
-            .container-details {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background-color: white;
-                width: 30%;
-                user-select: none;
-            }
-
-            .infor-main {
-                background-image: radial-gradient(circle at center, #ff96a8, #8d3a69);
-                border-radius: 0 0 50% 50%;
-                height: 60px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 30px;
-                padding: 20px;
-                font-size: 15px;
-                color: white;
-            }
-
-            .infor {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-                margin-bottom: 30px;
-            }
-
-            .infor button {
-                background-image: linear-gradient(to right, #ff96a8 60%, rgb(255, 240, 240));
-                padding: 10px;
-                border: none;
-                border-radius: 20px;
-                width: 50%;
-                color: #000;
-                font-weight: 700;
-                font-size: 1em;
-                cursor: pointer;
-            }
-
-            .infor hr {
-                width: 99%;
-            }
-
-            .infor img {
-                width: 2em;
-                margin-right: 10px;
-            }
-
-            .information {
-                display: flex;
-                align-items: center;
-            }
-        </style>
+        <title>Pesquisa na Internet</title>
     </head>
 
     <body>
-        <div class="container-details">
-            <div class="infor-main">
-                <h1>Anna Avetisyan</h1>
-            </div>
-            <div class="infor">
-                <div class="information">
-                    <img src="assets/img/user.png"
-                        alt="nome">
-                    <span>Anna Avetisyan</span>
-                </div>
-                <hr>
-                <div class="information">
-                    <img src="assets/img/e-mail.png"
-                        alt="email">
-                    <span>example@gmail.com</span>
-                </div>
-                <hr>
-                <div class="information">
-                    <img src="assets/img/faixa-etaria.png"
-                        alt="idade">
-                    <span>17</span>
-                </div>
-                <hr>
-                <div class="information">
-                    <img src="assets/img/genero.png"
-                        alt="genero">
-                    <span>Feminino</span>
-                </div>
-                <hr>
-                <button>Editar</button>
-                <button class="sair">Sair</button>
-                <button class="salvar">Salvar</button>
-                <button class="delete">Excluir</button>
-            </div>
-        </div>
+        <input type="text"
+            id="searchInput"
+            placeholder="Digite sua pergunta">
 
         <script>
-            const editar = document.querySelector("button");
-            const salvar = document.querySelector(".salvar");
-            const del = document.querySelector(".delete");
-            const sair = document.querySelector(".sair");
-            const textos = document.querySelectorAll("span");
+            const searchInput = document.getElementById('searchInput');
 
-            salvar.style.display = 'none';
-            del.style.display = 'none';
-
-            editar.addEventListener("click", () =>
+            searchInput.addEventListener('keydown', function (event)
             {
-                editar.style.display = 'none';
-                sair.style.display = 'none';
-                salvar.style.display = 'block';
-                del.style.display = 'block';
-                textos.forEach(alterar =>
-                {
-                    alterar.setAttribute("contenteditable", "true");
-                });
-            });
+                if (event.keyCode === 13) { // Verifica se a tecla Enter foi pressionada
+                    event.preventDefault(); // Impede o comportamento padrão do formulário
 
-            salvar.addEventListener("click", () =>
-            {
-                editar.style.display = 'block';
-                sair.style.display = 'block';
-                salvar.style.display = 'none';
-                del.style.display = 'none';
-                textos.forEach(alterar => alterar.setAttribute("contenteditable", "false"));
-            });
+                    const query = searchInput.value; // Obtém o valor do input
 
-            del.addEventListener("click", () =>
-            {
-                editar.style.display = 'block';
-                sair.style.display = 'block';
-                salvar.style.display = 'none';
-                del.style.display = 'none';
-                textos.forEach(alterar =>
-                {
-                    alterar.setAttribute("contenteditable", "false");
-                    alterar.innerHTML = '';
-                });
+                    // Realiza a pesquisa na internet
+                    const searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+
+                    // Abre o resultado da pesquisa em uma nova guia
+                    window.open(searchUrl, '_blank');
+
+                    // Exibe o resultado em um alerta (opcional)
+                    alert('Realizando a pesquisa: ' + query);
+                }
             });
         </script>
     </body>

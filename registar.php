@@ -20,11 +20,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $idade = filter_input(INPUT_POST, "idade");
         $genero = filter_input(INPUT_POST, "genero");
 
+        $pastaImagens = 'assets/img';
+        $nomeArquivo = 'user.png';
+        $novoNomeArquivo = 1 . '_' . uniqid();
+        $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+        $caminhoArquivo = $pastaImagens . $novoNomeArquivo . '.' . $extensao;
+
+        // Move o arquivo para o local desejado
+        move_uploaded_file($_FILES['fotoPerfil']['tmp_name'], $caminhoArquivo);
+
         try {
             $sql = mysqli_query(
                 $conexao,
-                "INSERT INTO cadastro(nome, email, senha, idade, genero)
-                VALUES ('$nome', '$email', '$senha', '$idade', '$genero')"
+                "INSERT INTO cadastro(nome, email, senha, idade, genero, file_user)
+                VALUES ('$nome', '$email', '$senha', '$idade', '$genero', '$caminhoArquivo')"
             );
         } catch (Exception $th) {
             echo "<script> alert('Erro:" . $th->getMessage() . "')</script>";
@@ -95,25 +104,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <script src="assets/js/registro.js"></script>
-    <script>
-        // Verifique se a chave 'hasLoadedOnce' existe no armazenamento de sessão
-        if (window.sessionStorage.getItem('hasLoadedOnce')) {
-            // A chave existe, portanto esta é a segunda vez que a página foi carregada
-            const button = document.querySelector('.btn-login');
-            const modal = document.querySelector('dialog');
-            const buttonClose = document.querySelector('dialog button');
-            modal.showModal();
-
-            buttonClose.onclick = function() {
-                modal.close();
-            }
-            window.sessionStorage.setItem('hasLoadedOnce', false);
-        } else {
-            // A chave não existe, portanto esta é a primeira vez que a página foi carregada
-            // Armazene um valor com a chave 'hasLoadedOnce' no armazenamento de sessão
-            window.sessionStorage.setItem('hasLoadedOnce', true);
-        }
-    </script>
 </body>
 
 </html>

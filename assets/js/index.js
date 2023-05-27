@@ -128,6 +128,7 @@ var overlay = document.getElementById("loading-overlay");
 // Esconde o overlay quando a página estiver carregada
 window.addEventListener("load", function () {
     overlay.style.display = "none";
+    console.log("Carregado!");
 });
 
 // Mostra o overlay quando a página começar a carregar
@@ -149,39 +150,4 @@ details.addEventListener("toggle", () => {
     {
         document.body.classList.remove("details-active");
     }
-});
-const editar = document.querySelector(".edit");
-const salvar = document.querySelector(".salvar");
-const del = document.querySelector(".delete");
-const textos = document.querySelectorAll(".infor-span");
-
-salvar.style.display = 'none';
-del.style.display = 'none';
-
-editar.addEventListener("click", () => {
-    editar.style.display = 'none';
-    salvar.style.display = 'block';
-    del.style.display = 'block';
-    textos.forEach(alterar => {
-        alterar.setAttribute("contenteditable", "true");
-    });
-});
-
-salvar.addEventListener("click", () => {
-    editar.style.display = 'block';
-    salvar.style.display = 'none';
-    del.style.display = 'none';
-    textos.forEach(alterar => {
-        alterar.setAttribute("contenteditable", "false");
-    });
-});
-
-del.addEventListener("click", () => {
-    editar.style.display = 'block';
-    salvar.style.display = 'none';
-    del.style.display = 'none';
-    textos.forEach(alterar => {
-        alterar.setAttribute("contenteditable", "false");
-        alterar.innerHTML = '';
-    });
 });

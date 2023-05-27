@@ -47,16 +47,16 @@ if (mysqli_num_rows($result) == 1) { //Verfica se existe alguma coluna de acordo
     <header>
         <nav id="menu">
             <div>
-                <span class="logo" translate="no">
+                <a href="index.php" class="logo" translate="no" style="color: black;">
                     <img src="assets/img/podfalar-logo.png" class="podfalar-logo">
                     <span class="logo-txt-lateral">PodFalar</span>
-                </span>
+                </a>
             </div>
             <ul class="lista">
                 <a href="#" class="link">Home</a>
                 <a href="depoimentos.html" class="link">Depoimentos</a>
                 <a href="assets/chat/chat.php" class="link">Auto-ajuda</a>
-                <a href="listar-dicas.html" class="link">Listar de Dicas</a>
+                <a href="assets/documents/PodFalar.pdf" target="_blank" class="link">Listar Dicas</a>
             </ul>
             <div class="menu-responsive">
                 <button class="navbar burguer" onclick="toggleMenu()"></button>
@@ -74,13 +74,22 @@ if (mysqli_num_rows($result) == 1) { //Verfica se existe alguma coluna de acordo
                 <!-- DETALHE DO USUÁRIO -->
                 <details id="details-user">
                     <summary>
-                        <img src="assets/img/user.png" alt="user" class="user">
+                        <img src='<?php
+                                    if (isset($_SESSION['login_user'])) echo $dadosUser['file_user'];
+                                    else echo 'assets/img/user.png';
+                                    ?>' alt='img' name='fotoPerfil' class="user" onclick="toggleDetails()">
                     </summary>
                     <section class="login">
                         <span>Você não tem conta logada ainda, <a href="registar.php" class="link-login">registre-se ou logue-se</a> agora</span>
                     </section>
                     <div class="container-details">
                         <div class="infor-main">
+                            <div class="profile-image">
+                                <img src='<?php
+                                            if (isset($_SESSION['login_user'])) echo $dadosUser['file_user'];
+                                            else echo 'assets/img/user.png';
+                                            ?>' alt='img' name='fotoPerfil'>
+                            </div>
                             <h1 data-name="nome">
                                 <?php
                                 if ($dadosUser == '') {
@@ -89,7 +98,11 @@ if (mysqli_num_rows($result) == 1) { //Verfica se existe alguma coluna de acordo
                                     echo $dadosUser['nome'];
                                 }
                                 ?>
+                                <a href="mudar-registros.php">⚙️</a>
                             </h1>
+                            <div class="overlay">
+                                <img src="" alt="Ampliar Imagem">
+                            </div>
                         </div>
                         <div class="infor">
                             <div class="information">
@@ -139,28 +152,29 @@ if (mysqli_num_rows($result) == 1) { //Verfica se existe alguma coluna de acordo
                                         echo '';
                                     } else {
                                         echo $dadosUser['genero'];
+                                        echo "<script>console.log('Passou do genero')</script>";
                                         $dadosUser['genero'] = strtolower($dadosUser['genero']);
+                                        echo "<script>console.log('Passou da transformação')</script>";
                                         if ($dadosUser['genero'] == 'feminino') {
-                                            echo "<script>
-                                        document.querySelector('.details').style.backgroundColor = 'pink';
-                                        document.documentElement.style.setProperty('--color-before', 'pink');
-                                    </script>";
+                                            echo "
+                                            <script>
+                                                console.log('Passsou no feminino');
+                                                document.querySelector('.infor-main').style.backgroundImage = 'radial-gradient(circle at center, #ff96a8, #8d3a69)';
+                                            </script>";
                                         } else if ($dadosUser['genero'] == 'masculino') {
-                                            echo "<script>
-                                        document.querySelector('.details').style.backgroundColor = 'dodgerblue';
-                                        document.documentElement.style.setProperty('--color-before', 'dodgerblue');
-                                    </script>";
+                                            echo "
+                                            <script>
+                                                console.log('Passsou no masculino');
+                                                document.querySelector('.infor-main').style.backgroundImage = 'radial-gradient(circle at center, #9d96ff, #423a8d);';
+                                            </script>";
                                         }
                                     } ?>
                                 </span>
                             </div>
                             <hr>
-                            <button class="edit">Editar</button>
                             <a href="assets/php/logout.php">
                                 <button class="sair">Sair</button>
                             </a>
-                            <button class="salvar">Salvar</button>
-                            <button class="delete">Excluir</button>
                         </div>
                     </div>
                     <?php
@@ -169,14 +183,12 @@ if (mysqli_num_rows($result) == 1) { //Verfica se existe alguma coluna de acordo
                                 <script>
                                     document.querySelector('.container-details').style.display = 'none';
                                     document.querySelector('.login').style.display = 'block';
-                                    document.querySelector('.link-login').style.display = 'none';
                                 </script>";
                     } else {
                         echo "
                                 <script>
                                     document.querySelector('.container-details').style.display = 'block';
                                     document.querySelector('.login').style.display = 'none';
-                                    document.querySelector('.link-login').style.display = 'none';
                                 </script>";
                     }
                     ?>
@@ -371,7 +383,6 @@ if (mysqli_num_rows($result) == 1) { //Verfica se existe alguma coluna de acordo
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
