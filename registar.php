@@ -20,14 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $idade = filter_input(INPUT_POST, "idade");
         $genero = filter_input(INPUT_POST, "genero");
 
-        $pastaImagens = 'assets/img';
-        $nomeArquivo = 'user.png';
-        $novoNomeArquivo = 1 . '_' . uniqid();
-        $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
-        $caminhoArquivo = $pastaImagens . $novoNomeArquivo . '.' . $extensao;
-
-        // Move o arquivo para o local desejado
-        move_uploaded_file($_FILES['fotoPerfil']['tmp_name'], $caminhoArquivo);
+        $caminhoArquivo =  'assets/img/user.png';
 
         try {
             $sql = mysqli_query(
@@ -35,6 +28,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 "INSERT INTO cadastro(nome, email, senha, idade, genero, file_user)
                 VALUES ('$nome', '$email', '$senha', '$idade', '$genero', '$caminhoArquivo')"
             );
+
+            if ($sql) {
+
+                $query = "SELECT * FROM cadastro WHERE email='$email' AND senha='$senha'";
+                $result = mysqli_query($conexao, $query);
+
+                if (mysqli_num_rows($result) == 1) {
+                    $dadosUser = mysqli_fetch_assoc($result);
+
+                    // Define a variável global de sessão
+                    $_SESSION['login_user'] = $dadosUser['codigo'];
+
+                    // Redireciona para o index.php
+                    header("Location: index.php");
+                    exit; // Termina a execução do script
+                }
+            }
         } catch (Exception $th) {
             echo "<script> alert('Erro:" . $th->getMessage() . "')</script>";
         }
@@ -59,14 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <a href="index.php">
         <img src="assets/img/botao-voltar.png" class="img-btn-back">
     </a>
-
-    <div class="dialogo">
-        <dialog>
-            <h1>Sucess</h1>
-            <p>Agora para tudo ocorrer bem, faça o login (entrar) corretamente :)</p>
-            <button>Ok</button>
-        </dialog>
-    </div>
 
     <div class="container" id="container">
         <div class="form-container sign-up-container">

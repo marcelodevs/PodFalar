@@ -6,54 +6,101 @@
     box-sizing: border-box;
 }
 
-.container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
 }
 
-fieldset {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    border: none;
-    padding: 20px;
-    background-color: #f2f2f2;
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .profile-image {
     width: 100px;
     height: 100px;
-    cursor: pointer;
-    overflow: hidden;
+    margin: 20px auto;
     border-radius: 50%;
+    overflow: hidden;
 }
 
 .profile-image img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
-input[type="file"] {
+.myForm {
+    padding: 20px;
+}
+
+.myForm legend {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.myForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.myForm input[type="text"],
+.myForm input[type="email"],
+.myForm input[type="password"],
+.myForm input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.myForm input[type="file"] {
     display: none;
 }
 
-.update-img {
-    display: inline-flex;
+.show-senha {
     position: absolute;
-    top: 70%;
-    left: 9%;
+    top: 63%;
+    left: 64%;
     cursor: pointer;
-    background: dodgerblue;
+}
+
+.update-img {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: dodgerblue;
+    color: #fff;
     border: none;
-    border-radius: 3px;
-    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.update,
+.del {
+    flex: 1;
+    padding: 10px;
+    background-color: dodgerblue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update {
+    margin-right: 10px;
 }
 
 .overlay {
@@ -75,51 +122,11 @@ input[type="file"] {
     max-height: 70%;
 }
 
-legend {
-    border: 1px solid dodgerblue;
-    padding: 5px;
-    background: dodgerblue;
-    border-radius: 2px;
-}
-
-.myForm {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    padding: 20px 50px 70px 50px;
-    gap: 5px;
-}
-
-input {
-    outline: none;
-    border: none;
-    border-bottom: 1px solid black;
-}
-
-.show-senha {
-    display: inline-flex;
+.img-btn-back {
+    width: 3em;
+    height: 3em;
     position: absolute;
-    top: 42%;
-    left: 73%;
-    cursor: pointer;
-}
-
-.btn-group {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    top: 87%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.update,
-.del {
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    padding: 10px;
-    color: black;
-    background: dodgerblue;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
 }

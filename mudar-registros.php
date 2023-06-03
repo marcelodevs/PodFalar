@@ -17,7 +17,7 @@ if (isset($_POST['upload']) && isset($_POST['idUsuario'])) {
         $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
         $patch = $pasta . $novoNomeArquivo . '.' . $extensao;
 
-        if ($extensao != 'png' && $extensao != 'jpg') die("Tipo de arquivo não aceito");
+        if ($extensao != 'png' and $extensao != 'jpg' and $extensao != 'jpeg') die("Tipo de arquivo não aceito");
 
         $deuCerto = move_uploaded_file($tmp_name, $patch);
         if ($deuCerto) {
@@ -28,15 +28,10 @@ if (isset($_POST['upload']) && isset($_POST['idUsuario'])) {
         }
     }
 
-    $tudoCerto = insert($conexao, $arquivo['error'], $arquivo['size'], $arquivo['name'], $arquivo['tmp_name'], $idUsuario);
-    if ($tudoCerto) {
-        echo "<p>Foto de perfil atualizada com sucesso!</p>";
-    } else {
-        echo "<p>Erro ao atualizar foto de perfil</p>";
-    }
+    insert($conexao, $arquivo['error'], $arquivo['size'], $arquivo['name'], $arquivo['tmp_name'], $idUsuario);
 }
 
-$sql_query = $conexao->query("SELECT file_user FROM cadastro WHERE codigo = '$idUsuario'");
+$sql_query = $conexao->query("SELECT * FROM cadastro WHERE codigo = '$idUsuario'");
 
 while ($usuario = $sql_query->fetch_assoc()) {
 ?>
@@ -56,28 +51,30 @@ while ($usuario = $sql_query->fetch_assoc()) {
     </head>
 
     <body>
+        <a href="index.php">
+            <img src="assets/img/botao-voltar.png" class="img-btn-back">
+        </a>
         <div class='container'>
             <fieldset>
                 <form class='myForm' method='post' action='' enctype='multipart/form-data'>
-                    <div class="profile-image"><img src='<?php echo $usuario['file_user'];
-                                                        } ?>' alt='img' name='fotoPerfil'></div>
+                    <div class="profile-image"><img src='<?php echo $usuario['file_user']; ?>' alt='img' name='fotoPerfil'></div>
                     <input type='file' class='update-img' id="fileInput" name='fotoPerfil'>
                     <button class='update-img' onclick=' event.preventDefault();document.getElementById("fileInput").click()'>Mudar foto</button>
                     <input type='hidden' name='idUsuario' value='<?php echo $idUsuario; ?>'>
-                    <legend>Configurar perfil</legend>
                     <label for='nomeUpdate'>Nome</label>
-                    <input type='text' name='nomeUpdate' id='nomeUpdate' value='Marcelo'>
+                    <input type='text' name='nomeUpdate' id='nomeUpdate' value='<?php echo $usuario['nome']; ?>'>
                     <label for='emailUpdate'>E-mail</label>
-                    <input type='text' name='emailUpdate' value='example@gmail.com'>
+                    <input type='text' name='emailUpdate' value='<?php echo $usuario['email']; ?>'>
                     <label for='senhaUpdate'>Senha</label>
-                    <input type='password' name='senhaUpdate' class='senhaUpdate' value='sjd'>
+                    <input type='password' name='senhaUpdate' class='senhaUpdate' value='<?php echo $usuario['senha']; ?>'>
                     <abbr title='Mostrar senha'>
-                        <span class='show-senha'>👀</span>
+                        <span class='show-senha'>&#x1F441;</span>
                     </abbr>
                     <label for='idadeUpdate'>Idade</label>
-                    <input type='number' name='idadeUpdate' value='17'>
+                    <input type='number' name='idadeUpdate' value='<?php echo $usuario['idade']; ?>'>
                     <label for='generoUpdate'>Gênero</label>
-                    <input type='text' name='generoUpdate' value='Masculino'>
+                    <input type='text' name='generoUpdate' value='<?php echo $usuario['genero'];
+                                                                } ?>'>
                     <div class='btn-group'>
                         <button type='submit' class='update' name='upload'>Atualizar</button>
                         <button type='submit' class='del'>Excluir</button>

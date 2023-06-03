@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/depoimento.css">
+    <title>PodFalar - Depoimentos</title>
     <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
-    <title>Depoimentos</title>
+    <!-- CSS do Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/depoimento.css">
 </head>
 
 <body>
@@ -21,10 +22,10 @@
                 </span>
             </div>
             <ul class="lista">
-                <a href="index.html" class="link">Home</a>
+                <a href="index.php" class="link">Home</a>
                 <a href="depoimentos.html" class="link" style="text-decoration: underline;">Depoimentos</a>
-                <a href="assets/chat/chat.html" class="link">Auto-ajuda</a>
-                <a href="assets/documents/DOC-20230318-WA0135.pdf" target="_blank" class="link">Listar Dicas</a>
+                <a href="assets/chat/chat.php" class="link">Auto-ajuda</a>
+                <a href="assets/documents/PodFalar.pdf" target="_blank" class="link">Listar Dicas</a>
             </ul>
             <div class="menu-responsive">
                 <button class="navbar burguer" onclick="toggleMenu()"></button>
@@ -41,17 +42,13 @@
         </nav>
     </header>
 
-    <!-- CARROUSSEL -->
-    <div class="slider-container">
-        <a href="index.php">
-            <img src="assets/img/botao-voltar.png" class="img-btn-back">
-        </a>
-        <button class="slider-button prev-button">&larr;</button>
-        <button class="slider-button next-button">&rarr;</button>
-        <div class="slider">
-            <div class="slide active">
-                <h3> <span>|</span> Rio de Janeiro </h3>
-                <p>“A primeira vez foi quando criança, eu tinha no máximo 11 anos, estava em Araruama,
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active slide-leve">
+                <h1 class="d-block w-100">Rio de Janeiro</h1>
+                <br>
+                <p class="d-block w-60 h-50 text-center mx-auto fs-5 fst-italic">
+                    “A primeira vez foi quando criança, eu tinha no máximo 11 anos, estava em Araruama,
                     meus
                     pais andavam atrás de mim pois eles diziam que era necessário para que não me
                     perdessem
@@ -61,21 +58,25 @@
                     Foi
                     uma ação rápida e ninguém viu. Me calei e me arrumei rapidamente. Senti vergonha de
                     mim
-                    e nojo. Até hoje ninguém sabe disso.”</p>
+                    e nojo. Até hoje ninguém sabe disso.”
+                </p>
             </div>
-            <div class="slide">
-                <h3><span>|</span>Rio de Janeiro (Leve)</h3>
-                <p>“Estávamos, minha amiga e eu, curtindo o Carnaval em Cabo Frio, há uns 10 anos.
+            <div class="carousel-item slide-leve">
+                <h1 class="d-block w-100">Rio de Janeiro</h1>
+                <p class="d-block w-60 text-center mx-auto fs-5 fst-italic">
+                    “Estávamos, minha amiga e eu, curtindo o Carnaval em Cabo Frio, há uns 10 anos.
                     Passamos
                     por um grupo de homens que nos jogou para dentro da roda e disse que tínhamos que
                     beija-los. Eu disse que não os beijaria e ele falou: quem não beijar, toma porrada.
                     Minha amiga e eu abaixamos a cabeça e tentamos nos proteger com o braços. Levamos
                     tapas
-                    e socos.”</p>
+                    e socos.”
+                </p>
             </div>
-            <div class="slide">
-                <h3><span class="inter">|</span>São Paulo (Intermedario)</h3>
-                <p>“Eu estava ficando com um cara, sem muita vontade. Minha amiga estava ficando com um
+            <div class="carousel-item slide-inter">
+                <h1 class="d-block w-100">São Paulo</h1>
+                <p class="d-block w-60 text-center mx-auto fs-5 fst-italic">
+                    “Eu estava ficando com um cara, sem muita vontade. Minha amiga estava ficando com um
                     amigo dele, então, acabou acontecendo. Estava beijando ele e estávamos conversando e
                     quando vi, ele abriu a calça e pôs o pênis para fora. Na hora, eu não entendi e acho
                     que
@@ -90,15 +91,17 @@
                     dia, que fomos de novo pra esse lugar é encontramos essa turma, esse cara nem se
                     aproximou. Tudo isso deve ter acontecido em 2012 ou 2013 e por alguns dias, ficava
                     com
-                    medo de chegar perto de homens.”</p>
+                    medo de chegar perto de homens.”
+                </p>
             </div>
-            <div class="slide">
-                <h3><span class="pesa">|</span>Amazonas (Pesado)</h3>
-                <p>“Aqui no Amazonas tem o festival folclórico voltado para o Boi-Bumbá, que acontece
+            <div class="carousel-item slide-pesado">
+                <h1 class="d-block w-100">Amazonas</h1>
+                <p class="d-block w-60 text-center mx-auto fs-5 fst-italic">
+                    “Aqui no Amazonas tem o festival folclórico voltado para o Boi-Bumbá, que acontece
                     normalmente no meio do ano, na cidade de Parintins. Só que existem outros eventos
                     voltados pra isso na capital, Manaus, um deles acontece no período do carnaval e se
                     chama CarnaBoi.
-
+                    
                     Eu frequentei o CarnaBoi por alguns anos. No último que fui, aconteceu o episódio
                     que
                     vou relatar. Eu tava com alguns amigos, saí pra comprar cerveja numa banca com dois
@@ -107,27 +110,28 @@
                     meu carro?”. No susto, eu só puxei o braço e continuei andando. Meus amigos olharam
                     e
                     perguntaram se tava tudo bem.
-
+                    
                     Na volta, meus amigos iam na frente, esse mesmo moço me puxou pela cintura e disse
                     que
                     tava doído pra me “comer”, eu empurrei ele, então ele me puxou pela camisa e disse
                     que
                     eu ia pro carro dele, querendo ou não. Eu consegui me soltar e cheguei até os meus
                     amigos.
-
+                    
                     Na hora que parei ao lado deles, eu fui arrastada pelo cabelo. Eu tinha o cabelo
                     comprido, até o fim das costas, e foi a primeira coisa que esse moço achou. Eu caí
                     no
                     chão e ele me arrastou. Meus amigos bateram nele, foi uma confusão.
-
+                    
                     Ele me soltou e eu nunca mais fui pra evento nenhum de carnaval. Ele não conseguiu
                     me
                     levar pro carro, mas eu fico pensando: e se eu tivesse ido comprar cerveja sozinha”
                 </p>
             </div>
-            <div class="slide">
-                <h3><span>|</span>Ceará</h3>
-                <p>“Trabalhei em uma empresa bem pequena e era a única menina que almoçava com os
+            <div class="carousel-item slide-inter">
+                <h1 class="d-block w-100">Ceará</h1>
+                <p class="d-block w-60 text-center mx-auto fs-5 fst-italic">
+                    “Trabalhei em uma empresa bem pequena e era a única menina que almoçava com os
                     meninos.
                     Eu escutei algumas coisas que me deixaram sem jeito, tipo ‘como você se sente sendo
                     a
@@ -136,11 +140,13 @@
                     um dia, um deles fez comentários sobre meus seios, que são grandes, o que me deixou
                     extremamente desconfortável. Em outra vez, combinamos de fazer cachorro quente no
                     refeitório. Foi quando um deles disse: ‘eu trago a salsicha e você traz o quê?’, e
-                    sorriu para mim.”</p>
+                    sorriu para mim.”
+                </p>
             </div>
-            <div class="slide">
-                <h3><span>|</span>Ceará</h3>
-                <p>“Trabalhei de hostess em um restaurante. O maître começou a fazer convites para
+            <div class="carousel-item slide-leve">
+                <h1 class="d-block w-100">Ceará</h1>
+                <p class="d-block w-60 text-center mx-auto fs-5 fst-italic">
+                    “Trabalhei de hostess em um restaurante. O maître começou a fazer convites para
                     sairmos
                     para beber e eu, sempre educada, dava um jeito de recusar sem constrangê-lo. Até que
                     um
@@ -153,20 +159,33 @@
                     posto e ir embora no meio do expediente. No dia seguinte, contei ao dono do
                     restaurante,
                     que me perguntou se eu não estaria inventando essa história. De vítima, passei a ser
-                    vilã. Todos ganharam aumento, menos eu.”</p>
+                    vilã. Todos ganharam aumento, menos eu.”
+                </p>
             </div>
-            <div class="slide">
-                <h3><span class="inter">|</span>Ceará</h3>
-                <p>"Fui abusada aos 8 anos por um amigo do pai, um homem que na época era casado e
+            <div class="carousel-item slide-inter">
+                <h1 class="d-block w-100">Ceará</h1>
+                <p class="d-block w-50 text-center mx-auto fs-5 fst-italic">
+                    "Fui abusada aos 8 anos por um amigo do pai, um homem que na época era casado e
                     frequentava a casa da família. A parte mais difícil é não conseguir falar sobre o
                     abuso
                     com ninguém, nem mesmo com psicólogos. Por mais que eu tente, as palavras não saem”
                 </p>
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 
-    <script src="assets/js/index.js"></script>
+    <!-- Scripts do Bootstrap 5 (jQuery e Popper.js são necessários para o Carousel) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -62,46 +62,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-/* CARROUSEL */
-
-const prevButton = document.querySelector('.prev-button');
-const nextButton = document.querySelector('.next-button');
-const slides = document.querySelectorAll('.slide');
-
-let currentIndex = 0;
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        if (i === index)
-        {
-            slide.style.display = 'block';
-        } else
-        {
-            slide.style.display = 'none';
-        }
-    });
-}
-
-showSlide(currentIndex);
-
-prevButton.addEventListener('click', () => {
-    currentIndex--;
-    if (currentIndex < 0)
-    {
-        currentIndex = slides.length - 1;
-    }
-    showSlide(currentIndex);
-});
-
-nextButton.addEventListener('click', () => {
-    currentIndex++;
-    if (currentIndex >= slides.length)
-    {
-        currentIndex = 0;
-    }
-    showSlide(currentIndex);
-});
-
 /* BARRA DE PROGRESSÃO */
 
 // Seleciona o elemento da barra de progresso
