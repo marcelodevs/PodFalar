@@ -3,24 +3,34 @@ session_start();
 include("assets/php/conexao.php");
 
 $idUsuario = $_SESSION['login_user'];
+
+// Verifica se o formulário foi enviado e se o campo 'idUsuario' está definido
 if (isset($_POST['upload']) && isset($_POST['idUsuario'])) {
     $arquivo = $_FILES['fotoPerfil'];
 
+    // Função para inserir o arquivo no servidor
     function insert($con, $error, $size, $name, $tmp_name, $idUsuario)
     {
+        // Verifica se ocorreu algum erro no upload do arquivo
         if ($error) die("Deu erro irmão");
+
+        // Verifica se o tamanho do arquivo excede o limite
         if ($size > 2097152) die("Muito grande irmão");
 
+        // Cria um caminho para a nova imagem que o usuário escolheu
         $pasta = 'assets/files/';
         $nomeArquivo = $name;
         $novoNomeArquivo = $idUsuario . '_' . uniqid();
         $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
         $patch = $pasta . $novoNomeArquivo . '.' . $extensao;
 
+        // Verifica se a extensão do arquivo é suportada
         if ($extensao != 'png' and $extensao != 'jpg' and $extensao != 'jpeg') die("Tipo de arquivo não aceito");
 
+        // Move o arquivo para a pasta de destino
         $deuCerto = move_uploaded_file($tmp_name, $patch);
         if ($deuCerto) {
+            // Atualiza o caminho do arquivo no banco de dados
             $con->query("UPDATE cadastro SET file_user = '$patch' WHERE codigo = '$idUsuario'");
             return true;
         } else {

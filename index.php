@@ -49,6 +49,12 @@ if (mysqli_num_rows($result) == 1) { //Verfica se existe alguma coluna de acordo
         <img src="assets/img/carregador.png" alt="Loading" class="loading-image">
     </div>
 
+    <!-- Música de fundo -->
+    <audio id="background-music" src="assets/sound/ValentinesDayMusic.mp3" loop></audio>
+    <button class="music-button" onclick="toggleMusic()">
+        🎵
+    </button>
+
     <!-- MENU -->
     <header>
         <nav id="menu">

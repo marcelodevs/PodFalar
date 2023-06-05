@@ -77,6 +77,30 @@
     }
 }
 
+/* MÚSICA */
+
+.music-button {
+    position: fixed;
+    top: 20%;
+    right: 5%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    animation: aparece 2s linear;
+    width: 20px;
+    height: 20px;
+}
+
+@keyframes aparece {
+    0% {
+        right: -5%
+    }
+
+    100% {
+        right: 5%
+    }
+}
+
 /* LOGO */
 
 .podfalar-logo {

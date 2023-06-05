@@ -111,3 +111,20 @@ details.addEventListener("toggle", () => {
         document.body.classList.remove("details-active");
     }
 });
+
+/* MÚSICA DE FUNDO */
+
+var music = document.getElementById('background-music');
+var musicIcon = document.getElementById('music-button');
+
+function toggleMusic() {
+    if (music.paused)
+    {
+        music.play();
+        musicIcon.innerText = '🎵'
+    } else
+    {
+        music.pause();
+        musicIcon.innerText = '🎵'
+    }
+}

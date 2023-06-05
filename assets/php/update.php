@@ -13,18 +13,18 @@ if (mysqli_num_rows($result) == 1) {
     $id = $dadosUser['codigo'];
 }
 
-if (isset($_POST['update'])) {
-    $nomeUpdate = $_POST['nome'];
-    $emailUpdate = $_POST['email'];
-    $senhaUpdate = $_POST['senha'];
-    $idadeUpdate = $_POST['idade'];
-    $generoUpdate = $_POST['genero'];
+if (isset($_POST['upload'])) {
+    $nomeUpdate = $_POST['nomeUpdate'];
+    $emailUpdate = $_POST['emailUpdate'];
+    $senhaUpdate = $_POST['senhaUpdate'];
+    $idadeUpdate = $_POST['idadeUpdate'];
+    $generoUpdate = $_POST['generoUpdate'];
 
     $update = mysqli_query($conexao, "UPDATE cadastro SET nome = '$nomeUpdate', email = '$emailUpdate', senha = '$senhaUpdate', idade = '$idadeUpdate', genero = '$generoUpdate' WHERE codigo = '$id'");
 
     if ($update) {
-        echo "Dados atualizados com sucesso!";
+        echo "<script>alert('Dados atualizados com sucesso!')</script>";
     } else {
-        echo "Erro ao atualizar os dados.";
+        echo "<script>alert('Erro ao atualizar os dados')</script>";
     }
 }
